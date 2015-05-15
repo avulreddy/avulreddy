@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="modules" default="update-modified-jsps" basedir="./../..">
+ 	
+	  <property file="${basedir}\Dev-BuildTools\${user.name}.properties" />
+		<echo message="${basedir}\Dev-BuildTools\${user.name}.properties"/>
+	  <target name="update-modified-jsps"  description="override modified jsps" >
+			<echo message="override modified jsps"/>
+	  		<echo message="${application.ear.install.dir}/${ear.GHStore.filename}/store.war}"/>
+			<copy todir="${application.ear.install.dir}/${ear.GHStore.filename}/store.war" verbose="true" failonerror="false">
+				<fileset dir="${dynamo.root.dir}/GHStore/proj/GHStore/Storefront/j2ee-apps/Storefront/storefront.war" excludes="**/*.xml,**/*.MF,WEB-INF/*.*,includes/*.*"/>
+		    </copy>				
+	  </target>
+
+</project>

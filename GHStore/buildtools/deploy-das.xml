@@ -1,0 +1,215 @@
+﻿<!--
+  This ant file is responsible for J2EE deployments.  It has been broken out
+  because it's huge, mostly independent of the other targets, and not all that
+  fun.
+-->
+<project name="deploy" default="deploy" basedir=".">
+
+  <!-- Define an if and else task for use in this definition -->
+  <taskdef name="if"
+    classname="ise.antelope.tasks.IfTask"
+    classpath="${global.dir}/../lib/atg-ant.jar"/>
+    
+  <taskdef name="else"
+    classname="ise.antelope.tasks.ElseTask"
+    classpath="${global.dir}/../lib/atg-ant.jar"/>
+
+  <taskdef name="foreach"
+    classname="net.sf.antcontrib.logic.ForEach"
+    classpath="${global.dir}/../lib/ant-contrib.jar"/>
+
+  <taskdef name="switch"
+    classname="net.sf.antcontrib.logic.Switch"
+    classpath="${global.dir}/../lib/ant-contrib.jar"/>
+     
+  <!-- ================================================================= -->
+  <!--                    Some initialization tasks.                     -->
+    <target name="-deployinit">
+        <!-- Create the timestamp -->
+        <tstamp />
+        <echo message=""/>
+        <echo message=""/>
+        <echo message="#############################################################################"/>
+        <echo message=""/>
+        <echo message="${module.parent}.${module.name}: start date = ${DSTAMP}  start time = ${TSTAMP}" />
+        <echo message="JAVA_HOME       = ${env.JAVA_HOME}"/>
+		    <echo message="dynamo.home     = ${dynamo.home}" />
+		    <echo message="dynamo.root.dir = ${dynamo.root.dir}" />
+        <echo message="deploy.definition.file = ${deploy.definition.file}"/>
+        <echo message="global.dir      = ${global.dir}" />
+        <echo message="common.dir      = ${common.dir}" />
+        <echo message=""/>
+        <echo message="#############################################################################"/>
+        <echo message=""/>
+        <echo message=""/>
+	      <!-- Sleep for a bit -->
+		    <sleep seconds="2"/>
+    </target>
+
+
+  <target name="-j2eedirsexist" description="verifies that the j2ee directories exist">
+      <available file="${j2ee.dir}"                   property="j2eedir.exists" />
+  </target>
+
+  <!-- ================================================================= -->
+  <!--              deploy: Deploys the application.                     -->
+  <target name="deploy" 
+            depends="-deployinit"
+            description="Deploys J2EE application and any 3rd party ears or wars">
+
+    <antcall target="-deploy-application-wars" />
+  </target>
+
+  <!-- =================================================================== -->
+  <!--  -deploy-application-wars: deploy the war built for the application -->
+  <target name="-deploy-application-wars"
+          depends="-j2eedirsexist"
+          if="j2eedir.exists"
+          description="Deploys the J2EE application for the module">
+          
+    <antcall target="-create-exploded-dar" />
+  </target>  
+  
+  
+  <!-- ================================================================= -->
+  <!--           devdeploy: Deploys the application in dev mode          -->
+  <target name="devdeploy"
+            depends="-deployinit, -j2eedirsexist"
+            description="Deploys J2EE application in dev mode by copying the JSPs.">
+    <antcall target="-dev-deploy-application-wars" />
+  </target>
+
+  <target name="-dev-deploy-application-wars"
+          depends="-j2eedirsexist"
+          if="j2eedir.exists"
+          description="Copies the J2EE application for the module">
+          
+    <echo message="Install To:   = ${install.j2ee.dir}/${module.name}"/>
+    <echo message="Install From: = ${j2ee.dir}"/>
+	
+    <copy description="Copying j2ee files"
+        todir="${install.j2ee.dir}/${module.name}"
+        verbose="${copy.verbose.bool}">
+      <fileset dir="${j2ee.dir}">
+        <exclude name="META-INF/*.*" />
+        <exclude name="WEB-INF/*.*"  />
+      </fileset>
+    </copy>
+
+  </target>
+  
+  <!-- ====================================================================== -->
+  <!-- create-ear-file: Creates an ear file by jarring the J2EE directory up. -->
+  <target name="-create-ear-file" 
+          description="creates the ear file by jarring the ear (j2ee) directory">
+    <mkdir dir="${ear.dir}" />
+    <jar destfile="${ear.dir}/${module.name}.ear">
+      <fileset dir="${j2ee.dir}">
+        <include name="**/*" />
+      </fileset>
+    </jar>
+  </target> 
+
+  <!-- ================================================================= -->
+  <!--
+    create-exploded-dar: Creates an exploded dar file, merging in all
+    the changed files.
+  -->
+  <target name="-create-exploded-dar" depends="-create-ear-file">
+
+    <unjar src="${ear.dir}/${module.name}.ear"
+        dest="${install.j2ee.dir}/${module.name}"/>
+
+    <antcall target="-strip-whitespace"/>
+    
+    <!-- For each web inf we find copy the taglibraries into it -->
+    <path id="web.inf.dirs">
+      <dirset dir="${install.j2ee.dir}/${module.name}">
+        <include name="**/WEB-INF"/>
+      </dirset>
+    </path>
+    
+    <foreach param="target.webinf.dir" target="-copy-taglibs">
+      <path refid="web.inf.dirs"/>
+    </foreach>
+
+	
+    <antcall target="-exec-create-exploded-dar" />        
+		        
+  </target>
+  
+  <!--
+    Strips whitespace from the J2EE application as a preprocessing task
+  -->
+  <target name="-strip-whitespace">
+  
+    <taskdef name="stripspaces"
+        classname="com.atg.ant.taskdefs.StripWhitespaceFromJsp"
+        classpath="${global.dir}/../lib/atg-ant.jar"/>
+
+    <if name="strip.j2ee.whitespace" value="true">
+        
+      <echo message="Stripping Whitespace"  />
+      <stripspaces>
+        <fileset dir="${install.j2ee.dir}/${module.name}">
+          <include name="**/*.jsp" />
+          <include name="**/*.jspf" />
+        </fileset>
+      </stripspaces>
+      
+      <else>
+        <echo message="strip.j2ee.whitespace set to false, skipping strip task" />
+      </else>
+    </if>  
+  
+  </target>
+  
+  <target name="-copy-taglibs"></target>
+    
+  <!-- ================================================================= -->
+  <!--
+    Checks the precompile argument to see if its set.  If it is 
+    not set then this sets the runDarina argument for the precompilation 
+    step.
+    
+    Note the value to precompile is "-jsp-compile"
+  -->
+  <target name="-set-precompile-arg" unless="darina.precompile.arg" >
+    <property name="darina.precompile.arg" value="" />
+  </target>
+
+  <!-- ================================================================= -->
+  <!--
+    exec-create-exploded-dar: Executes Darina to create exploded dar from
+    the staging directory.
+  -->
+  <target name="-exec-create-exploded-dar" depends="-set-precompile-arg">
+    <exec executable="${rundarina.win.cmd}"
+        failonerror="yes"
+        os="Windows 2000,Windows NT,Windows XP, Windows 2003">
+      <arg value="${install.j2ee.dir}/${module.name}" />
+      <arg value="-build" />
+      <arg value="-no-dar" />
+      <arg value="${darina.precompile.arg}" />
+      <arg value="-continue-on-errors" />
+    </exec>
+    <exec executable="${rundarina.unix.cmd}"
+        failonerror="yes"
+        os="Solaris,Linux">
+      <arg value="${install.j2ee.dir}/${module.name}" />
+      <arg value="-build" />
+      <arg value="-no-dar" />
+      <arg value="${darina.precompile.arg}" />
+      <arg value="-continue-on-errors" />
+    </exec>
+  </target>
+  
+  <!-- ================================================================= -->
+  <!--                   runs the ATG J2EE assembler                     -->
+  <target name="-run-j2ee-assembler" 
+          description="runs ATG's application assembler to produce the ATG big ear for 3rd party app servers">
+
+    <echo>This is a no-op for DAS no Big Ear assembly required</echo>
+  </target>
+  
+</project>

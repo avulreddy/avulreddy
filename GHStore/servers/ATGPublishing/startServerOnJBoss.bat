@@ -1,0 +1,1 @@
+call "D:/projects/jboss-eap-6.1//bin/standalone.bat" --server-config=ATGPublishing.xml -b 0.0.0.0 %*

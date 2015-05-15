@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="DYNAMO_ROOT/DCS/lib/classes.jar"/>
+	<classpathentry kind="var" path="DYNAMO_ROOT/DAS/lib/classes.jar" sourcepath="/DYNAMO_ROOT"/>
+	<classpathentry kind="var" path="DYNAMO_ROOT/DPS/lib/classes.jar"/>
+	<classpathentry kind="var" path="DYNAMO_ROOT/DAS/lib/servlet.jar"/>
+	<classpathentry kind="var" path="DYNAMO_ROOT/CommerceReferenceStore/Store/EStore/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="var" path="DYNAMO_ROOT/CommerceReferenceStore/Store/EStore/lib/classes.jar"/>
+	<classpathentry kind="var" path="DYNAMO_ROOT/CommerceReferenceStore/Store/DCS-CSR/lib/classes.jar"/>
+	<classpathentry kind="output" path="classes"/>
+</classpath>

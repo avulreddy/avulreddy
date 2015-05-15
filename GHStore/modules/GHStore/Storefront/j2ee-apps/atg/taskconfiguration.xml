@@ -1,0 +1,1447 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE task-configuration
+        PUBLIC "-//Art Technology Group, Inc.//DTD Asset Manager Task Configuration//EN"
+        'http://www.atg.com/dtds/web/assetmanager/taskConfiguration_1.0.dtd'>
+
+<task-configuration>
+
+    <!-- =====================================================================
+-->
+
+  <activity id="activity.scr.browseSCR" inherit-from="assetManager.defaultEdit">
+
+    <activity-name>
+      activity.scr.browseSCR
+    </activity-name>
+    <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+    </asset-editor>
+    <!-- Define tabs for the left pane -->
+	<operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+      </operations>
+    <tabs>
+      <tab-order>
+        <tab-id>browse</tab-id>
+        <tab-id>search</tab-id>
+        <tab-id>project</tab-id>
+      </tab-order>
+      <initial-tab>
+        browse
+      </initial-tab>
+
+
+      <!-- Configure the Browse tab -->
+      <tab id="browse">
+        <display-name-resource>
+          assetManager.tab.browse
+        </display-name-resource>
+        <page>
+          /browse/browseTab.jsp
+        </page>
+        <views>
+          <view-order>
+            <view-id>siteChangeRequestCategoryList</view-id>
+            <view-id>siteChangeRequestPageList</view-id>
+          </view-order>
+          <initial-view>
+            siteChangeRequestCategoryList
+          </initial-view>
+            <view id="siteChangeRequestCategoryList">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.siteChangeRequestCategory
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/SCRCategoryTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+
+          <view id="siteChangeRequestPageList">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.siteChangeRequestPageList
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/SCRPageTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+         
+        </views>
+      </tab>
+      <!-- Configure the Search tab -->
+    <tab id="search">
+        <display-name-resource>
+          assetManager.tab.search
+        </display-name-resource>
+        <page>
+          /search/searchTab.jsp
+        </page>
+        <views>
+          <initial-view>
+            form
+          </initial-view>
+          <view id="form">
+            <page>
+              /search/searchForm.jsp
+            </page>
+            <item-types>
+           	  <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrCategory</item-type>
+              <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrPage</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:image</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:dhtml</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:flash</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:video</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:knowledgeAssistance</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faqTopic</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faq</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:assetRef</item-type>
+             </item-types>
+          </view>
+          <view id="results">
+            <page>
+              /search/searchResults.jsp
+            </page>
+            <operations>
+              <!-- don't need link or unlink -->
+              <operation combine="remove">link</operation>
+              <operation combine="remove">unlink</operation>
+            </operations>
+          </view>
+        </views>
+      </tab>
+      <tab id="project">
+        <display-name-resource>
+          assetManager.tab.project
+        </display-name-resource>
+        <page>
+          /project/projectTab.jsp
+        </page>
+        <operations>
+          <!-- Disallow addToProject and allow removeFromProject in the project tab -->
+          <operation combine="remove">addToProject</operation>
+          <operation>removeFromProject</operation>
+        </operations>
+      </tab>
+    </tabs>
+
+  </activity>
+
+  <!-- =====================================================================
+-->
+<task id="personalization.editSegmentsAndTargeters" inherit-from="personalization.browseSegmentsAndTargeters">
+ <workflow-name>
+      /Personalization/editSegmentsAndTargeters.wdl
+    </workflow-name>
+     <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+     </asset-editor>
+     
+    <tabs>
+      <tab-order xml-combine="replace">
+        <tab-id>search</tab-id>
+       	<tab-id>project</tab-id>
+      </tab-order>
+      <tab id="search">
+       <display-name-resource>
+          assetManager.tab.search
+        </display-name-resource>
+        <page>
+          /search/searchTab.jsp
+        </page>
+        <views>
+          <initial-view>
+            form
+          </initial-view>
+         <view id="form">
+            <page>
+              /search/searchForm.jsp
+            </page>
+            
+         <item-types>
+              <item-type>/atg/epub/file/SecuredPublishingFileRepository:segment</item-type>
+              <item-type>/atg/epub/file/SecuredPublishingFileRepository:targeter</item-type>
+          </item-types>
+          </view>
+          <view id="results">
+            <page>
+              /search/searchResults.jsp
+            </page>
+            <operations>
+              <!-- users/orgs/roles don't need link or unlink -->
+              <operation combine="remove">link</operation>
+              <operation combine="remove">unlink</operation>
+            </operations>
+           </view>
+        </views>
+      </tab>
+ <tab id="project">
+        <display-name-resource>
+          assetManager.tab.project
+        </display-name-resource>
+        <page>
+          /project/projectTab.jsp
+        </page>
+        <operations>
+          <!-- Disallow addToProject and allow removeFromProject in the project tab -->
+          <operation combine="remove">addToProject</operation>
+          <operation>removeFromProject</operation>
+        </operations>
+      </tab>
+    </tabs>
+    <!-- Use read/write view mappings -->
+    <view-mappings>
+      <view-mapping mode="AssetManager.edit" combine="replace">
+        <item-mapping>
+          <item-type>*</item-type>
+          <item-mapping-name>AssetManager</item-mapping-name>
+        </item-mapping>
+      </view-mapping>
+    </view-mappings>
+</task>
+
+  <task id="task.scr.createSCRs" inherit-from="activity.scr.browseSCR">
+    <workflow-name>/SiteChangeRequests/createSiteChangeRequest.wdl</workflow-name>
+    <task-name>CreateSiteChangeRequests</task-name>
+    <operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+    </operations>
+    <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+    </asset-editor>
+    <tabs>
+    	<tab-order>
+	        <tab-id>project</tab-id>
+       </tab-order>
+      <tab id="browse">
+        <views>
+            <view-order combine="replace"> <!-- remove the other views -->
+                <view-id>siteChangeRequestCategoryList</view-id>
+                <view-id>siteChangeRequestPageList</view-id>
+            </view-order>
+            <view id="siteChangeRequestCategoryList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/SCRCategoryTreeConfiguration
+                </configuration>
+			</view>	
+            <view id="siteChangeRequestPageList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/SCRPageTreeConfiguration
+                </configuration>
+            </view>
+        </views>
+    </tab>
+     <tab id="project">
+          <display-name-resource>
+              assetManager.tab.project
+          </display-name-resource>
+          <page>
+              /project/projectTab.jsp
+          </page>
+          <operations>
+              <operation>addToProject</operation>
+              <operation>removeFromProject</operation>
+          </operations>
+      </tab>
+    </tabs>
+    <view-mappings>
+            <view-mapping mode="AssetManager.edit" combine="replace">
+                <item-mapping>
+                    <item-type>*</item-type>
+                    <item-mapping-name>AssetManager</item-mapping-name>
+                </item-mapping>
+            </view-mapping>
+        </view-mappings>
+  </task>
+  
+  <task id="task.approveProjectSCR" inherit-from="activity.scr.browseSCR">
+    <workflow-name>/SiteChangeRequests/createSiteChangeRequest.wdl</workflow-name>
+    <task-name>ApproveProject</task-name>
+    <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+    </asset-editor>
+    <operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+      <operation>addToMultiEdit</operation>
+    </operations>
+    <tabs>
+        <tab-order>
+	        <tab-id>project</tab-id>
+	        <tab-id>multiEdit</tab-id>
+      </tab-order>
+      <tab id="browse">
+        <views>
+            <view-order combine="replace"> <!-- remove the other views -->
+                <view-id>siteChangeRequestCategoryList</view-id>
+                <view-id>siteChangeRequestPageList</view-id>
+                <view-id>image</view-id>
+                <view-id>dhtml</view-id>
+                <view-id>flash</view-id>
+                <view-id>video</view-id>
+                <view-id>knowledgeAssitance</view-id>
+                <view-id>faqTopic</view-id>
+                <view-id>faq</view-id>
+                <!-- Fix for defect 3616 -->
+                <view-id>catalogTree</view-id>
+                <!-- Fix for defect 3616 -->
+                <view-id>allMedia</view-id>
+            </view-order>
+            <initial-view>
+            image
+          </initial-view>
+            <view id="siteChangeRequestCategoryList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetSCRCategoryTreeViewConfiguration
+                </configuration>
+            </view>
+            <view id="siteChangeRequestPageList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetSCRPageTreeViewConfiguration
+                </configuration>
+            </view>
+            <view id="dhtml">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/DhtmlTreeConfiguration
+                </configuration>
+            </view>
+<!--			 <view id="html">-->
+<!--                <configuration combine="replace">-->
+<!--                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetHtmlListConfiguration-->
+<!--                </configuration>-->
+<!--            </view>-->
+            <view id="image">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ImageTreeConfiguration
+                </configuration>
+            </view>
+            <view id="faqTopic">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FaqTopicTreeConfiguration
+                </configuration>
+            </view>
+            <view id="faq">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FaqTreeConfiguration
+                </configuration>
+            </view>
+            <view id="flash">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FlashTreeConfiguration
+                </configuration>
+            </view>
+            <view id="video">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/VideoTreeConfiguration
+                </configuration>
+            </view>
+            <view id="knowledgeAssitance">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/KATreeConfiguration
+                </configuration>
+            </view>
+            <!-- Fix for defect 3616 -->
+            <view id="catalogTree">
+            	<resource-bundle>
+              		atg.commerce.web.WebAppResources
+            	</resource-bundle>
+            	<display-name-resource>
+             		 browseTab.view.catalog
+            	</display-name-resource>
+            	<configuration>
+             		 /atg/commerce/web/assetmanager/CatalogBrowseTabConfiguration
+            	</configuration>
+            	<page>
+              		/browse/tree.jsp
+            	</page>
+          </view>
+          <!-- Fix for defect 3616 -->
+            <view id="allMedia">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/AllMediaTreeConfiguration
+                </configuration>
+            </view>
+        </views>
+    </tab>
+    <!-- Fix for defect 4002 -->
+    <!-- Configure the Search tab -->
+    <tab id="search">
+        <display-name-resource>
+          assetManager.tab.search
+        </display-name-resource>
+        <page>
+          /search/searchTab.jsp
+        </page>
+        <views>
+          <initial-view>
+            form
+          </initial-view>
+          <view id="form">
+            <page>
+              /search/searchForm.jsp
+            </page>
+            <item-types>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:channel</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:productPresentation</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:product</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:sku</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:shortCopy</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:longCopy</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:ensemble</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:page</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:category</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:department</item-type>
+               <!-- Fix for defect 4829 -->
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:giftRegistry</item-type>
+              </item-types>
+          </view>
+          <view id="results">
+            <page>
+              /search/searchResults.jsp
+            </page>
+            <operations>
+                            <!-- don't need link or unlink -->
+                <operation combine="remove">link</operation>
+              <operation combine="remove">unlink</operation>
+            </operations>
+          </view>
+        </views>
+      </tab>
+    <!-- Configure the Project tab -->
+      <tab id="project">
+          <display-name-resource>
+              assetManager.tab.project
+          </display-name-resource>
+          <page>
+              /project/projectTab.jsp
+          </page>
+          <operations>
+              <operation>addToProject</operation>
+              <operation>removeFromProject</operation>
+          </operations>
+      </tab>
+
+      <!-- Configure the Multi Edit tab with input form and results views -->
+		<tab id="multiEdit">
+		        <display-name-resource>
+		          assetManager.tab.multiEdit
+		        </display-name-resource>
+		        <page>
+		          /multiEdit/multiEditTab.jsp
+		        </page>
+		        <operations>
+
+	 <!-- Disallow addToMultiEdit, and add the multiEdit operations -->
+		<operation combine="remove">addToMultiEdit</operation>
+		          <operation>removeFromMultiEdit</operation>
+		          <operation>stepEdit</operation>
+		          <operation>applyToAll</operation>
+		          <operation>listEdit</operation>
+		        </operations>
+		        <configuration>
+		          /atg/web/assetmanager/configuration/MultiEditTabConfiguration
+		        </configuration>
+		      </tab>
+
+
+    </tabs>
+    <view-mappings>
+            <view-mapping mode="AssetManager.view" combine="replace" >
+                <item-mapping>
+                  <item-type>*</item-type>
+                  <item-mapping-name>AssetManager</item-mapping-name>
+                </item-mapping>
+            </view-mapping>
+            <view-mapping mode="AssetManager.edit">
+                <item-mapping>
+                  <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrCategory</item-type>
+                  <item-mapping-name>ViewSCRCategory</item-mapping-name>
+                  <view-mapping-mode-override>AssetManager.view</view-mapping-mode-override>
+                </item-mapping>
+                <item-mapping>
+		          <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrPage</item-type>
+		          <item-mapping-name>ViewSCRPage</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.view</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:folder</item-type>
+		          <item-mapping-name>EditFolder</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:image</item-type>
+		          <item-mapping-name>EditImage</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faqTopic</item-type>
+		          <item-mapping-name>EditFaqTopic</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faq</item-type>
+		          <item-mapping-name>EditFaq</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:dhtml</item-type>
+		          <item-mapping-name>EditDhtml</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:flash</item-type>
+		          <item-mapping-name>EditFlash</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceDHTML</item-type>
+		          <item-mapping-name>EditDhtmlAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceFlash</item-type>
+		          <item-mapping-name>EditFlashAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceImg</item-type>
+		          <item-mapping-name>EditImageAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:video</item-type>
+		          <item-mapping-name>EditVideo</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		    </view-mapping>
+            <view-mapping mode="AssetManager.multiEdit" combine="replace" >
+                <item-mapping>
+                  <item-type>*</item-type>
+                    <item-mapping-name>AssetManager</item-mapping-name>
+                </item-mapping>
+            </view-mapping>
+        </view-mappings>
+
+  </task>
+  
+
+  <!-- =====================================================================
+-->
+
+  <task id="task.assignContent" inherit-from="activity.scr.browseSCR">
+    <workflow-name>/SiteChangeRequests/createSiteChangeRequest.wdl</workflow-name>
+    <task-name>AssignContent</task-name>
+    <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+    </asset-editor>
+    <operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+      <operation>addToMultiEdit</operation>
+    </operations>
+    <tabs>
+        <tab-order>
+	        <tab-id>project</tab-id>
+	        <tab-id>multiEdit</tab-id>
+      </tab-order>
+      <tab id="browse">
+        <views>
+            <view-order combine="replace"> <!-- remove the other views -->
+                <view-id>siteChangeRequestCategoryList</view-id>
+                <view-id>siteChangeRequestPageList</view-id>
+                <view-id>image</view-id>
+                <view-id>dhtml</view-id>
+                <view-id>flash</view-id>
+                <view-id>video</view-id>
+                <view-id>knowledgeAssitance</view-id>
+                <view-id>faqTopic</view-id>
+                <view-id>faq</view-id>
+                <!-- Fix for defect 3616 -->
+                <view-id>catalogTree</view-id>
+                <!-- Fix for defect 3616 -->
+                <view-id>allMedia</view-id>
+            </view-order>
+            <initial-view>
+            image
+          </initial-view>
+            <view id="siteChangeRequestCategoryList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetSCRCategoryTreeViewConfiguration
+                </configuration>
+            </view>
+            <view id="siteChangeRequestPageList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetSCRPageTreeViewConfiguration
+                </configuration>
+            </view>
+            <view id="dhtml">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/DhtmlTreeConfiguration
+                </configuration>
+            </view>
+<!--			 <view id="html">-->
+<!--                <configuration combine="replace">-->
+<!--                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetHtmlListConfiguration-->
+<!--                </configuration>-->
+<!--            </view>-->
+            <view id="image">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ImageTreeConfiguration
+                </configuration>
+            </view>
+            <view id="faqTopic">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FaqTopicTreeConfiguration
+                </configuration>
+            </view>
+            <view id="faq">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FaqTreeConfiguration
+                </configuration>
+            </view>
+            <view id="flash">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FlashTreeConfiguration
+                </configuration>
+            </view>
+            <view id="video">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/VideoTreeConfiguration
+                </configuration>
+            </view>
+            <view id="knowledgeAssitance">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/KATreeConfiguration
+                </configuration>
+            </view>
+            <!-- Fix for defect 3616 -->
+            <view id="catalogTree">
+            	<resource-bundle>
+              		atg.commerce.web.WebAppResources
+            	</resource-bundle>
+            	<display-name-resource>
+             		 browseTab.view.catalog
+            	</display-name-resource>
+            	<configuration>
+             		 /atg/commerce/web/assetmanager/CatalogBrowseTabConfiguration
+            	</configuration>
+            	<page>
+              		/browse/tree.jsp
+            	</page>
+          </view>
+          <!-- Fix for defect 3616 -->
+            <view id="allMedia">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/AllMediaTreeConfiguration
+                </configuration>
+            </view>
+        </views>
+    </tab>
+    <!-- Fix for defect 4002 -->
+    <!-- Configure the Search tab -->
+    <tab id="search">
+        <display-name-resource>
+          assetManager.tab.search
+        </display-name-resource>
+        <page>
+          /search/searchTab.jsp
+        </page>
+        <views>
+          <initial-view>
+            form
+          </initial-view>
+          <view id="form">
+            <page>
+              /search/searchForm.jsp
+            </page>
+            <item-types>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:channel</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:productPresentation</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:product</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:sku</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:shortCopy</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:longCopy</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:ensemble</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:page</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:category</item-type>
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:department</item-type>
+               <!-- Fix for defect 4829 -->
+              <item-type>/atg/commerce/catalog/MerchandisingProductCatalog:giftRegistry</item-type>
+            </item-types>
+          </view>
+          <view id="results">
+            <page>
+              /search/searchResults.jsp
+            </page>
+            <operations>
+                            <!-- don't need link or unlink -->
+                <operation combine="remove">link</operation>
+              <operation combine="remove">unlink</operation>
+            </operations>
+          </view>
+        </views>
+      </tab>
+    <!-- Configure the Project tab -->
+      <tab id="project">
+          <display-name-resource>
+              assetManager.tab.project
+          </display-name-resource>
+          <page>
+              /project/projectTab.jsp
+          </page>
+          <operations>
+              <operation>addToProject</operation>
+              <operation>removeFromProject</operation>
+          </operations>
+      </tab>
+
+      <!-- Configure the Multi Edit tab with input form and results views -->
+		<tab id="multiEdit">
+		        <display-name-resource>
+		          assetManager.tab.multiEdit
+		        </display-name-resource>
+		        <page>
+		          /multiEdit/multiEditTab.jsp
+		        </page>
+		        <operations>
+
+	 <!-- Disallow addToMultiEdit, and add the multiEdit operations -->
+		<operation combine="remove">addToMultiEdit</operation>
+		          <operation>removeFromMultiEdit</operation>
+		          <operation>stepEdit</operation>
+		          <operation>applyToAll</operation>
+		          <operation>listEdit</operation>
+		        </operations>
+		        <configuration>
+		          /atg/web/assetmanager/configuration/MultiEditTabConfiguration
+		        </configuration>
+		      </tab>
+
+
+    </tabs>
+    <view-mappings>
+            <view-mapping mode="AssetManager.view" combine="replace" >
+                <item-mapping>
+                  <item-type>*</item-type>
+                  <item-mapping-name>AssetManager</item-mapping-name>
+                </item-mapping>
+            </view-mapping>
+            <view-mapping mode="AssetManager.edit">
+                <item-mapping>
+                  <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrCategory</item-type>
+                  <item-mapping-name>ViewSCRCategory</item-mapping-name>
+                  <view-mapping-mode-override>AssetManager.view</view-mapping-mode-override>
+                </item-mapping>
+                <item-mapping>
+		          <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrPage</item-type>
+		          <item-mapping-name>ViewSCRPage</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.view</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:folder</item-type>
+		          <item-mapping-name>EditFolder</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:image</item-type>
+		          <item-mapping-name>EditImage</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faqTopic</item-type>
+		          <item-mapping-name>EditFaqTopic</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faq</item-type>
+		          <item-mapping-name>EditFaq</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:dhtml</item-type>
+		          <item-mapping-name>EditDhtml</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:flash</item-type>
+		          <item-mapping-name>EditFlash</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceDHTML</item-type>
+		          <item-mapping-name>EditDhtmlAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceFlash</item-type>
+		          <item-mapping-name>EditFlashAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceImg</item-type>
+		          <item-mapping-name>EditImageAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:video</item-type>
+		          <item-mapping-name>EditVideo</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		    </view-mapping>
+            <view-mapping mode="AssetManager.multiEdit" combine="replace" >
+                <item-mapping>
+                  <item-type>*</item-type>
+                    <item-mapping-name>AssetManager</item-mapping-name>
+                </item-mapping>
+            </view-mapping>
+        </view-mappings>
+
+  </task>
+
+  <task id="task.moveToAssignContent" inherit-from="activity.scr.browseSCR">
+    <workflow-name>/SiteChangeRequests/createSiteChangeRequest.wdl</workflow-name>
+    <task-name>MoveToAssignContent</task-name>
+    <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+    </asset-editor>
+    <operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+      <operation>addToMultiEdit</operation>
+    </operations>
+    <tabs>
+        <tab-order>
+	        <tab-id>project</tab-id>
+	        <tab-id>multiEdit</tab-id>
+      </tab-order>
+      <tab id="browse">
+        <views>
+            <view-order combine="replace"> <!-- remove the other views -->
+                <view-id>siteChangeRequestCategoryList</view-id>
+                <view-id>siteChangeRequestPageList</view-id>
+                <view-id>image</view-id>
+                <view-id>dhtml</view-id>
+                <view-id>flash</view-id>
+                <view-id>video</view-id>
+                <view-id>knowledgeAssitance</view-id>
+                <view-id>faqTopic</view-id>
+                <view-id>faq</view-id>
+                <view-id>allMedia</view-id>
+            </view-order>
+            <initial-view>
+            image
+          </initial-view>
+            <view id="siteChangeRequestCategoryList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetSCRCategoryTreeViewConfiguration
+                </configuration>
+            </view>
+            <view id="siteChangeRequestPageList">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ProjectAssetSCRPageTreeViewConfiguration
+                </configuration>
+            </view>
+            <view id="dhtml">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/DhtmlTreeConfiguration
+                </configuration>
+            </view>
+            <view id="image">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/ImageTreeConfiguration
+                </configuration>
+            </view>
+            <view id="faqTopic">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FaqTopicTreeConfiguration
+                </configuration>
+            </view>
+            <view id="faq">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FaqTreeConfiguration
+                </configuration>
+            </view>
+            <view id="flash">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/FlashTreeConfiguration
+                </configuration>
+            </view>
+            <view id="video">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/VideoTreeConfiguration
+                </configuration>
+            </view>
+            <view id="knowledgeAssitance">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/KATreeConfiguration
+                </configuration>
+            </view>
+            <view id="allMedia">
+                <configuration>
+                    /com/jcpenney/scr/assetmanager/configuration/AllMediaTreeConfiguration
+                </configuration>
+            </view>
+        </views>
+    </tab>    
+    <!-- Configure the Project tab -->
+      <tab id="project">
+          <display-name-resource>
+              assetManager.tab.project
+          </display-name-resource>
+          <page>
+              /project/projectTab.jsp
+          </page>
+          <operations>
+              <operation>addToProject</operation>
+              <operation>removeFromProject</operation>
+          </operations>
+      </tab>
+
+      <!-- Configure the Multi Edit tab with input form and results views -->
+		<tab id="multiEdit">
+		        <display-name-resource>
+		          assetManager.tab.multiEdit
+		        </display-name-resource>
+		        <page>
+		          /multiEdit/multiEditTab.jsp
+		        </page>
+		        <operations>
+
+	 <!-- Disallow addToMultiEdit, and add the multiEdit operations -->
+		<operation combine="remove">addToMultiEdit</operation>
+		          <operation>removeFromMultiEdit</operation>
+		          <operation>stepEdit</operation>
+		          <operation>applyToAll</operation>
+		          <operation>listEdit</operation>
+		        </operations>
+		        <configuration>
+		          /atg/web/assetmanager/configuration/MultiEditTabConfiguration
+		        </configuration>
+		      </tab>
+
+
+    </tabs>
+    <view-mappings>
+            <view-mapping mode="AssetManager.view" combine="replace" >
+                <item-mapping>
+                  <item-type>*</item-type>
+                  <item-mapping-name>AssetManager</item-mapping-name>
+                </item-mapping>
+            </view-mapping>
+            <view-mapping mode="AssetManager.edit">
+                <item-mapping>
+                  <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrCategory</item-type>
+                  <item-mapping-name>ViewSCRCategory</item-mapping-name>
+                  <view-mapping-mode-override>AssetManager.view</view-mapping-mode-override>
+                </item-mapping>
+                <item-mapping>
+		          <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrPage</item-type>
+		          <item-mapping-name>ViewSCRPage</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.view</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/ca/scr/repository/SiteChangeRequestRepository:scrSlotInfo</item-type>
+		          <item-mapping-name>EditScrSlotInfo</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:folder</item-type>
+		          <item-mapping-name>EditFolder</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:image</item-type>
+		          <item-mapping-name>EditImage</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faqTopic</item-type>
+		          <item-mapping-name>EditFaqTopic</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faq</item-type>
+		          <item-mapping-name>EditFaq</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:dhtml</item-type>
+		          <item-mapping-name>EditDhtml</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:flash</item-type>
+		          <item-mapping-name>EditFlash</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceDHTML</item-type>
+		          <item-mapping-name>EditDhtmlAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceFlash</item-type>
+		          <item-mapping-name>EditFlashAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:astReferenceImg</item-type>
+		          <item-mapping-name>EditImageAstReference</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		        <item-mapping>
+		          <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:video</item-type>
+		          <item-mapping-name>EditVideo</item-mapping-name>
+		          <view-mapping-mode-override>AssetManager.edit</view-mapping-mode-override>
+		        </item-mapping>
+		    </view-mapping>
+            <view-mapping mode="AssetManager.multiEdit" combine="replace" >
+                <item-mapping>
+                  <item-type>*</item-type>
+                    <item-mapping-name>AssetManager</item-mapping-name>
+                </item-mapping>
+            </view-mapping>
+        </view-mappings>
+
+  </task>
+
+  <task id="task.wf.browseSCR" inherit-from="activity.scr.browseSCR">
+    <workflow-name>/SiteChangeRequests/createSiteChangeRequest.wdl</workflow-name>
+  </task>
+
+  <activity id="activity.ca.browseContent" inherit-from="assetManager.defaultEdit">
+
+    <activity-name>
+      activity.ca.browseContent
+    </activity-name>
+       <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+    </asset-editor>
+    <operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+      <operation>addToMultiEdit</operation>
+    </operations>
+    <!-- Define tabs for the left pane -->
+    <tabs>
+      <tab-order>
+        <tab-id>browse</tab-id>
+        <tab-id>search</tab-id>
+        <tab-id>project</tab-id>
+        <tab-id>multiEdit</tab-id>
+      </tab-order>
+      <initial-tab>
+        browse
+      </initial-tab>
+
+
+      <!-- Configure the Browse tab -->
+      <tab id="browse">
+        <display-name-resource>
+          assetManager.tab.browse
+        </display-name-resource>
+        <page>
+          /browse/browseTab.jsp
+        </page>
+        <views>
+          <view-order>
+            <!-- <view-id>html</view-id>-->
+			<view-id>image</view-id>
+            <view-id>dhtml</view-id>
+            <view-id>flash</view-id>
+            <view-id>video</view-id>
+            <view-id>knowledgeAssitance</view-id>
+            <view-id>faqTopic</view-id>
+            <view-id>faq</view-id>
+            <view-id>coupon</view-id>
+            <view-id>featuredOffer</view-id>
+           <view-id>featuredCategory</view-id>
+           <view-id>accordion</view-id>
+          <!-- <view-id>aegonOffer</view-id>-->
+            <view-id>allMedia</view-id>
+			<!-- <view-id>dhtmlMediaReference</view-id>
+			<view-id>imageMediaReference</view-id>
+			<view-id>flashMediaReference</view-id>-->
+          </view-order>
+          <initial-view>
+            image
+          </initial-view>
+		   <view id="dhtml">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.dhtml
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/DhtmlTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+          <view id="image">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.image
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/ImageTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+          <view id="faqTopic">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.faqTopic
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/FaqTopicTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+          <view id="faq">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.faq
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/FaqTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+
+      <view id="flash">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.flash
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/FlashTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+      <view id="video">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.video
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/VideoTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+           <view id="knowledgeAssitance">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.knowledgeAssitance
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/KATreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+          <view id="coupon">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.coupon
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/CouponTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+           <view id="featuredOffer">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.featuredOffer
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/FeatureOfferTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+          <view id="featuredCategory">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.featuredCategory
+            </display-name-resource>
+            <configuration>
+               /com/jcpenney/scr/assetmanager/configuration/FeaturedCategoryTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+          <view id="accordion">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.accordion
+            </display-name-resource>
+            <configuration>
+               /com/jcpenney/scr/assetmanager/configuration/AccordionTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+          <view id="allMedia">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.allMedia
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/AllMediaTreeConfiguration
+            </configuration>
+            <page>
+              /browse/tree.jsp
+            </page>
+          </view>
+		  <view id="imageMediaReference">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.imageMediaReference
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/ImageMediaListConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+		  <view id="flashMediaReference">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.flashMediaReference
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/FlashMediaListConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+		  <view id="dhtmlMediaReference">
+            <resource-bundle>
+              com.jcpenney.dp.ca.scr.WebAppResources
+            </resource-bundle>
+            <display-name-resource>
+              browseTab.view.dhtmlMediaReference
+            </display-name-resource>
+            <configuration>
+              /com/jcpenney/scr/assetmanager/configuration/DhtmlMediaListConfiguration
+            </configuration>
+            <page>
+              /browse/list.jsp
+            </page>
+          </view>
+        </views>
+      </tab>
+      <!-- Configure the Search tab -->
+    <tab id="search">
+        <display-name-resource>
+          assetManager.tab.search
+        </display-name-resource>
+        <page>
+          /search/searchTab.jsp
+        </page>
+        <views>
+          <initial-view>
+            form
+          </initial-view>
+          <view id="form">
+            <page>
+              /search/searchForm.jsp
+            </page>
+            <item-types>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:image</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:dhtml</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:flash</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:video</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:knowledgeAssistance</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faqTopic</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:faq</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:coupon</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:featuredOffer</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:featuredCategory</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:assetRef</item-type>
+              <item-type>/com/jcpenney/content/repository/SecureJCPContentRepository:accordion</item-type>
+            </item-types>
+          </view>
+          <view id="results">
+            <page>
+              /search/searchResults.jsp
+            </page>
+            <operations>
+                            <!-- don't need link or unlink -->
+                <operation combine="remove">link</operation>
+              <operation combine="remove">unlink</operation>
+            </operations>
+          </view>
+        </views>
+      </tab>
+      
+       <!-- Configure the Project tab -->
+      <tab id="project">
+          <display-name-resource>
+              assetManager.tab.project
+          </display-name-resource>
+          <page>
+              /project/projectTab.jsp
+          </page>
+          <operations>
+              <operation>addToProject</operation>
+              <operation>removeFromProject</operation>
+          </operations>
+      </tab>
+
+      <!-- Configure the Multi Edit tab with input form and results views -->
+		<tab id="multiEdit">
+		        <display-name-resource>
+		          assetManager.tab.multiEdit
+		        </display-name-resource>
+		        <page>
+		          /multiEdit/multiEditTab.jsp
+		        </page>
+		        <operations>
+
+	 <!-- Disallow addToMultiEdit, and add the multiEdit operations -->
+		<operation combine="remove">addToMultiEdit</operation>
+		          <operation>removeFromMultiEdit</operation>
+		          <operation>stepEdit</operation>
+		          <operation>applyToAll</operation>
+		          <operation>listEdit</operation>
+		        </operations>
+		        <configuration>
+		          /atg/web/assetmanager/configuration/MultiEditTabConfiguration
+		        </configuration>
+		      </tab>
+
+    </tabs>
+
+  </activity>
+
+  <task id="task.ca.createContent" inherit-from="activity.ca.browseContent">
+    <workflow-name>/Content Administration/CA.wdl</workflow-name>
+    <task-name>author</task-name>
+    <asset-editor>
+      <page>
+        /assetEditor/editAsset.jsp
+      </page>
+    </asset-editor>
+    <operations>
+      <operation>create</operation>
+      <operation>move</operation>
+      <operation>duplicate</operation>
+      <operation>delete</operation>
+      <operation>addToProject</operation>
+      <operation>addToMultiEdit</operation>
+    </operations>
+    <tabs>
+        <tab-order>
+            <tab-id>browse</tab-id>
+            <tab-id>search</tab-id>
+      </tab-order>
+      <tab id="browse">
+        <views>
+            <view-order combine="replace"> <!-- remove the other views -->
+                <!-- <view-id>html</view-id>-->
+                <view-id>image</view-id>
+                <view-id>dhtml</view-id>
+                <view-id>flash</view-id>
+                <view-id>video</view-id>
+                <view-id>knowledgeAssitance</view-id>
+                <view-id>faqTopic</view-id>
+                <view-id>faq</view-id>
+                 <view-id>coupon</view-id>
+                 <view-id>featuredOffer</view-id>
+                 <view-id>featuredCategory</view-id>
+                 <view-id>accordion</view-id>
+                 <view-id>catalogTree</view-id>

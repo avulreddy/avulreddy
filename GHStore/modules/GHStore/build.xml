@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="GHStore" default="all" basedir=".">
+
+    <property environment="env" />    
+    <!-- set global defaults  -->
+    
+    <!-- global.dir is used to resolve dev environment resources such as 
+         checkstyle libraries, custom ant tasks, etc..  Essentially stuff 
+         we don't want to stick directly into our module structure. In this 
+         framework the global directory is the /modules directory. -->
+    <property name="global.dir" value="${basedir}/../.."/>
+    <property name="buildtools.dir" value="${global.dir}/buildtools"/>
+    
+    <!-- Common dir identifies the location of the common ant tasks that all 
+         submodules import for use or overriding -->
+    <property name="common.dir" value="${buildtools.dir}"/>
+    <property file="${common.dir}/${user.name}.properties" />
+    <property file="${common.dir}/common.properties" />
+    <property file="${user.name}.properties" />
+    <property file="build.properties" />
+
+    <!-- Import common tasks -->
+    <import file="${common.dir}/common.xml"/>
+    <import file="${common.dir}/${deploy.definition.file}"/>
+    <import file="${common.dir}/sql.xml"/>
+        
+    <!-- Define the all task.  We do this here because we need to call tasks imported 
+         in both the common.xml and deploy.xml files.  This may seem a bit odd but it
+         feels better to segregate common tasks from j2ee deployment tasks and add 
+         this extra bit of layering than have one massive common task file which has
+         buttloads of targets, making it difficult to read.  You get my point separating
+         the tasks in multiple imports makes this complex environment easier to get 
+         around.  -->
+    <target name="all"
+      depends="clean,build,reports,install,deploy"
+      description="Cleans, builds, checks and installs the project." />
+
+	<!-- Define the Update task.  Done here for the same reason the All task was.
+	     See above comment. 
+	-->
+	<target name="update" 
+	   depends="build,install,devdeploy"
+	   description="Developer centric task to deploy code and JSP faster" />
+	  
+    <!-- Creates the modules tables. -->
+    <target name="createtables" description="Creates All ATG Tables">
+        
+    </target>
+
+    <target name="droptables" description="Drops All ATG Tables">
+       	
+    </target>
+      
+</project>

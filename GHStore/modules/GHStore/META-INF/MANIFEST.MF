@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+Created-By: 23.7-b01 (Oracle Corporation)
+ATG-Product: GH Store Commerce Application - GHStore
+ATG-Client-Class-Path: lib/classes.jar lib/ojdbc5.jar
+ATG-Config-Path: config/ config/config.jar
+ATG-LiveConfig-Path: liveconfig
+ATG-Web-Module: j2ee-apps/GHStore/GHStore.war
+ATG-Class-Path: lib/classes.jar
+ATG-Client-Update-File: true
+ATG-Install-Unit: GHStore
+ATG-Install-Version: GHStore@11.1
+

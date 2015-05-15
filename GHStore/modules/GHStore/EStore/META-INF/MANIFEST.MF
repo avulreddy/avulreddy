@@ -1,0 +1,9 @@
+ATG-Product: PayPal Application - GHStore.EStore
+Manifest-Version: 1.0
+ATG-Client-Class-Path: lib/classes.jar lib/ojdbc5.jar
+ATG-Config-Path: config/ config/config.jar
+ATG-LiveConfig-Path: liveconfig
+ATG-Class-Path: classes lib/classes
+Name: lib/classes.jar
+ATG-Required: Store.EStore
+ATG-Assembler-Import-File: True

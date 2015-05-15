@@ -1,0 +1,10 @@
+ATG-Product: GHStore.Storefront
+Manifest-Version: 1.0
+ATG-Client-Class-Path: lib/classes.jar
+ATG-Class-Path: classes lib/classes.jar
+ATG-Config-Path: config/ config/config.jar
+ATG-LiveConfig-Path: liveconfig
+ATG-Required: proj.GHStore.EStore
+ATG-Class-Path: lib/classes.jar
+ATG-Web-Module: j2ee-apps/Storefront/storefront.war
+ATG-Assembler-Import-File: True

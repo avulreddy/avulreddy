@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="BSCommerce.Versioned.base" default="all" basedir=".">
+
+    <property environment="env" />    
+    <!-- set global defaults  -->
+    
+    <!-- global.dir is used to resolve dev environment resources such as 
+         checkstyle libraries, custom ant tasks, etc..  Essentially stuff 
+         we don't want to stick directly into our module structure. In this 
+         framework the global directory is the /modules directory. -->
+    <property name="global.dir" value="${basedir}/../../../.."/>
+    <property name="buildtools.dir" value="${global.dir}/buildtools"/>
+    
+    <!-- Common dir identifies the location of the common ant tasks that all 
+         submodules import for use or overriding -->
+    <property name="common.dir" value="${buildtools.dir}"/>
+    <property file="${common.dir}/${user.name}.properties" />
+    <property file="${common.dir}/common.properties" />
+    <property file="${user.name}.properties" />
+    <property file="build.properties" />
+
+    <!-- Import common tasks -->
+    <import file="${common.dir}/common.xml"/>
+    <import file="${common.dir}/${deploy.definition.file}"/>
+    <import file="${common.dir}/sql.xml"/>
+        
+    <!-- Define the all task.  We do this here because we need to call tasks imported 
+         in both the common.xml and deploy.xml files.  This may seem a bit odd but it
+         feels better to segregate common tasks from j2ee deployment tasks and add 
+         this extra bit of layering than have one massive common task file which has
+         buttloads of targets, making it difficult to read.  You get my point separating
+         the tasks in multiple imports makes this complex environment easier to get 
+         around.  -->
+    <target name="all"
+      depends="clean,build,reports,install,deploy"
+      description="Cleans, builds, checks and installs the project." />
+
+    <!-- Define the Update task.  Done here for the same reason the All task was.
+	     See above comment. -->
+    <target name="update" 
+	   depends="build,install,devdeploy"
+	   description="Developer centric task to deploy code and JSP faster" />
+	
+    <!-- Copy the CA specific taglibraries to our application -->
+    <target name="-copy-taglibs">
+      <echo message="Copying Tag Libraries to directory ${target.webinf.dir}" />
+	  
+	    <!-- Taglib locations -->
+	    <property name="pws.taglib.tld.dir"  value="${dynamo.root.dir}/Publishing/taglib" />
+	    <property name="pws.taglib.lib.dir"  value="${dynamo.root.dir}/Publishing/taglib" />
+	    
+	    <copy todir="${target.webinf.dir}/lib" verbose="true">
+	      <fileset dir="${pws.taglib.lib.dir}">
+		    <exclude name="*.tld"/>
+		  </fileset>
+	    </copy>    
+	
+	    <copy todir="${target.webinf.dir}/taglib" verbose="true">
+	      <fileset dir="${pws.taglib.tld.dir}">
+		    <exclude name="*.jar"/>
+          </fileset>
+	    </copy>   
+	
+    </target>	
+    
+    <!-- override the original installsql task so we can specify our own ca schema settings -->  
+    <target name="-installsql"
+            description="Copy the sql to the deploy directory"
+            depends="-coredirsexist"
+            if="sqldir.exists">
+            
+        <echo message="Copying project sql to ${install.dir}/sql"/>
+        
+        <!-- <delete dir="${install.dir}/sql" /> -->
+        <mkdir dir="${install.dir}/sql" />
+
+        <!-- copy any text files --> 
+        <patternset id="sql.text.files">
+          <include name="**/*.TXT" />
+          <include name="**/*.txt" />
+        </patternset>
+        <copy todir="${install.dir}/sql" verbose="true" filtering="true">
+            <fileset dir="${sql.dir}" >
+              <patternset refid="sql.text.files" />
+            </fileset>
+        </copy>
+
+        <!-- Copy the SQL files specific to this module -->
+        <copy todir="${install.dir}/sql" verbose="true">
+            <fileset dir="${sql.main.dir}" />
+            <mapper type="glob" from="*.sql" to="*.sql"/>
+        </copy>
+        <copy todir="${install.dir}/sql" verbose="true">
+            <fileset dir="${sql.dir}" />
+            <mapper type="glob" from="*.sql" to="*.sql"/>
+        </copy>
+
+		<!-- copy the SQL files from to the main sql module -->
+        <!-- The destdir goes into the scripts as the filter, so this isn't as stupid as it looks. -->
+        <copytemplate srcdir="${sql.main.dir}/${database.type}/install"   
+		              coreschemauser="${jdbc.pubcore.user}" 
+					  catalogschemauser="${jdbc.pubcatalog.user}" 
+					  destdir="${install.dir}/sql/${database.type}/install"/>
+					  
+        <copytemplate srcdir="${sql.main.dir}/${database.type}/uninstall" 
+		              coreschemauser="${jdbc.pubcore.user}" 
+					  catalogschemauser="${jdbc.pubcatalog.user}" 
+		              destdir="${install.dir}/sql/${database.type}/uninstall"/>
+
+
+        <copytemplate srcdir="${sql.dir}/${database.type}/install"   
+		              coreschemauser="${jdbc.pubcore.user}" 
+					  catalogschemauser="${jdbc.pubcatalog.user}" 
+					  destdir="${install.dir}/sql/${database.type}/install"/>
+					  
+        <copytemplate srcdir="${sql.dir}/${database.type}/uninstall" 
+		              coreschemauser="${jdbc.pubcore.user}" 
+					  catalogschemauser="${jdbc.pubcatalog.user}" 
+		              destdir="${install.dir}/sql/${database.type}/uninstall"/>
+
+
+       
+        <antcall target="-export-atg-sql" />
+		
+		<!-- Steal the shell script from the main sql directory -->
+        <filter token="DAS_ROOT" value="${das.root.dir}" />
+        <filter token="DYNAMO_ROOT" value="${dynamo.root.dir}" />
+        <patternset id="sql.shell.files">
+          <include name="**/*.sh" />
+          <include name="**/*.bat" />
+        </patternset>
+        <copy todir="${install.dir}/sql" verbose="true" filtering="true">
+            <fileset dir="${sql.main.dir}" >
+              <patternset refid="sql.shell.files" />
+            </fileset>
+        </copy>
+		
+        
+    </target>
+    
+    <!-- Creates the modules tables. -->
+    <target name="createtables" description="Creates All ATG Tables">
+        <!-- If specified, create a schema for the Publishing Server -->
+        <if name="pub.createdrop.coreschema" value="true">
+		<ant target="createcorepubtables"/>
+		<else>
+			<echo>pub.createdrop.coreschema set to false - no invocation of sql for this module will occur</echo>
+		</else>
+        </if>
+        <if name="pub.createdrop.verschema" value="true">
+		<ant target="createverpubtables"/>
+		<else>
+			<echo>pub.createdrop.verschema  set to false - no invocation of sql for this module will occur</echo>
+		</else>
+        </if>
+        <if name="includeCampaignOptimizer" value="true">
+		<ant target="createCOtables"/>
+		<else>
+			<echo>includeCampaignOptimizer  set to false - no invocation of sql for CO module will occur</echo>
+		</else>
+        </if>
+    </target>
+
+    <target name="createcorepubtables" description="Creates Core ATG Tables for Publishing Server">
+        <sleep seconds="3"/>
+	<echo> </echo>
+	<echo>Creating Core Publishing Tables</echo>
+        
+        <!-- Dynamo Application Server Specific tables -->
+        <!-- Comment out if not running on DAS -->
+	<!-- 
+	<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.atg.appserver}" />
+        </ant>
+        -->
+        <!-- Core ATG Tables -->
+	<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.atg.bizui.core}" />
+        </ant>
+        <!-- Commerce catalog tables -->
+	<ant target="-performpubcatalogsql">
+            <property name="sql.ddl.file" value="${sql.install.atg.catalog}" />
+        </ant>
+        <!-- Commerce user tables -->
+	<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.atg.commerceuser}" />
+        </ant>
+        <!-- Grant commerce privileges -->
+	<ant target="-performpubcatalogsql">
+            <property name="sql.ddl.file" value="${sql.install.atg.privileges}" />
+        </ant>
+        <!-- Commerce reporting tables -->
+		<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.atg.reports1}" />
+        </ant>
+	<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.atg.reports2}" />
+        </ant>
+	<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.atg.reports3}" />
+        </ant>
+	<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.atg.reports4}" />
+        </ant>
+		
+        <!-- Project specific Tables -->
+	<ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.install.proj.core}" />
+        </ant>
+	
+    </target>
+    
+    <target name="createverpubtables" description="Creates Versioned Tables for Publishing Server">
+        <sleep seconds="3"/>
+        <echo></echo>
+	<echo>Creating Versioned Tables</echo>
+
+	<ant target="-performpubcatalogsql">
+            <property name="sql.ddl.file" value="${sql.install.proj.core.ver}" />
+        </ant>
+		
+    </target>
+    
+    <target name="createCOtables" description="Creates Versioned Tables for Publishing Server">
+        <sleep seconds="3"/>
+        <echo></echo>
+	<echo>Creating Campaign Optimizer Tables</echo>
+
+	<ant target="-performcoresql">
+            <property name="sql.ddl.file" value="${sql.install.proj.campaignoptimizer.core}" />
+        </ant>
+        
+        <ant target="-performpubcatalogsql">
+            <property name="sql.ddl.file" value="${sql.install.proj.campaignoptimizer.ver}" />
+        </ant>
+		
+    </target>
+
+    <target name="droptables" description="Drops All ATG Tables">
+       	<!-- If specified, create the schema for the Publishing server -->
+        <if name="pub.createdrop.verschema" value="true">
+		<ant target="dropverpubtables"/>
+        </if>
+        <if name="pub.createdrop.coreschema" value="true">
+		<ant target="dropcorepubtables"/>
+        </if>
+        
+	<delete file="DELETE_ME.SQL" failonerror="false" verbose="true"/>
+    </target>
+    
+    <target name="dropcorepubtables" description="Drops All ATG Tables for the Publishing server">
+        <sleep seconds="3"/>
+        <echo></echo>
+		<echo>Dropping Core Publishing Tables</echo>
+		<!-- ATG catalog and pricing -->
+        <ant target="-performpubcatalogsql">
+            <property name="sql.ddl.file" value="${sql.uninstall.alltables}" />
+        </ant>
+        <!-- Core ATG Tables -->
+        <ant target="-performpubcoresql">
+            <property name="sql.ddl.file" value="${sql.uninstall.alltables}" />
+        </ant>
+    </target>
+	
+    <target name="dropverpubtables" description="Drops All versioning tables from the Publishing server">
+        <sleep seconds="3"/>
+        <echo></echo>
+		<echo>Dropping Versioned Publishing Tables</echo>
+        <!-- Versioned content Tables -->
+		<!--
+        <ant target="-performpubversql">
+            <property name="sql.ddl.file" value="${sql.uninstall.alltables}" />
+        </ant>
+		-->
+    </target>
+    
+    
+    <!-- Publishing, BIZUI, & AssetUI imports/configuration
+         Assumes home/localconfig datasource pointing to Publishing environment core schema - the base import scripts do not take a server parameter.
+    -->
+    <target name="init-ca" description="Imports Publishing, BIZUI, and AssetUI configuration data">
+	    
+	
+		<exec dir="${dynamo.home}/../Publishing/base/install/" vmlauncher="false" executable="importPublishing.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+		<exec dir="${dynamo.home}/../BIZUI/install/" vmlauncher="false" executable="importBizui.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+		<exec dir="${dynamo.home}/../AssetUI/install/" vmlauncher="false" executable="importAssetUI.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+		<exec dir="${dynamo.home}/../DPS-UI/install/" vmlauncher="false" executable="importDPSUI.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+ 
+ 
+    	
+		<exec dir="${dynamo.home}/../Publishing/base/install/" vmlauncher="false" executable="./importPublishing.sh" os="SunOS,Linux"/>
+		<exec dir="${dynamo.home}/../BIZUI/install/" vmlauncher="false" executable="./importBizui.sh" os="SunOS,Linux"/>
+		<exec dir="${dynamo.home}/../AssetUI/install/" vmlauncher="false" executable="./importAssetUI.sh" os="SunOS,Linux"/>
+		<exec dir="${dynamo.home}/../DPS-UI/install/" vmlauncher="false" executable="./importDPSUI.sh" os="SunOS,Linux"/>
+		
+		
+		
+		<!-- import view mappings -->
+		<echo></echo>
+		<echo>Importing Publishing data using server: ${pub.server.name} and module: ${pub.module.for.import}</echo>
+		<echo></echo>
+		
+		<!--
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+			<arg line="-s ${pub.server.name} -m ${pub.module.for.import} -repository /atg/bizui/viewmapping/ViewMappingRepository -import ${basedir}/assets/viewMappingContent.xml"/>
+		</exec>
+
+    		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository" os="SunOS,Linux">
+			<arg line="-s ${pub.server.name} -m ${pub.module.for.import} -repository /atg/bizui/viewmapping/ViewMappingRepository -import ${basedir}/assets/viewMappingContent.xml"/>
+		</exec>
+		-->
+    </target>
+    
+    <target name="init-merch" description="Imports and Initializes Merchandising">
+		<exec dir="${dynamo.home}/../DCS-UI9.1/DCS-UI/install/" vmlauncher="false" executable="importDCSUIManagement.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+		<exec dir="${dynamo.home}/../DCS/Versioned/install/" vmlauncher="false" executable="importDCSVersioned.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+		<exec dir="${dynamo.home}/../DCS-UI9.1/DCS-UI/install/" vmlauncher="false" executable="importDCSUIManagementExamples.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+		
+		<exec dir="${dynamo.home}/../DCS-UI9.1/DCS-UI/install/" vmlauncher="false" executable="./importDCSUIManagement.sh" os="SunOS,Linux"/>
+		<exec dir="${dynamo.home}/../DCS/Versioned/install/" vmlauncher="false" executable="./importDCSVersioned.sh" os="SunOS,Linux"/>
+		<exec dir="${dynamo.home}/../DCS-UI9.1/DCS-UI/install/" vmlauncher="false" executable="./importDCSUIManagementExamples.sh" os="SunOS,Linux"/>
+    </target>
+    
+    <target name="init-co" description="Imports and Initializes CO">
+		<exec dir="${dynamo.home}/../CampaignOptimizer9.1/ABTest/management/Versioned/install/" vmlauncher="false" executable="importABTestManagement.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003"/>
+		
+		<exec dir="${dynamo.home}/../CampaignOptimizer9.1/ABTest/management/Versioned/install/" vmlauncher="false" executable="./importABTestManagement.sh" os="SunOS,Linux"/>
+    </target>
+
+    <target name="init-at" description="Imports and Initializes Merchandising">
+
+		<tstamp>
+			<format property="touch.time" pattern="MM-dd-yyyy-hh:mm:ss"/>
+		</tstamp>
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>			
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/catalog/ProductCatalog -import &quot;${basedir}/data/catalogDefinition.xml&quot; -workspace initialImport${touch.time} -comment initialCatalogImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/pricing/priceLists/PriceLists -import &quot;${basedir}/data/priceListsDefinition.xml&quot; -workspace initialPriceListsDefImport${touch.time} -comment initialPriceListsDefImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /com/at/platform/repository/siteinfo/SiteInfoRepository -import &quot;${basedir}/data/siteInfoDefinition.xml&quot; -workspace initialSiteInfoImport${touch.time} -comment initialSiteInfoImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/catalog/ProductCatalog -import &quot;${basedir}/data/departmentsDefinition.xml&quot; -workspace initialDepartmentsImport${touch.time} -comment initialDepartmentsImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/userprofiling/InternalProfileRepository -import &quot;${basedir}/data/bccUserProfiles.xml&quot;"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/catalog/ProductCatalog -import &quot;${basedir}/data/pageSlotsDefinition.xml&quot; -workspace initialPageSlotsImport${touch.time} -comment initialPageSlotsImport${touch.time}"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/catalog/ProductCatalog -import &quot;${basedir}/data/catalogDefinition.xml&quot; -workspace initialCatalogImport${touch.time} -comment initialCatalogImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/pricing/priceLists/PriceLists -import &quot;${basedir}/data/priceListsDefinition.xml&quot; -workspace initialPriceListsDefImport${touch.time} -comment initialPriceListsDefImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /com/at/platform/repository/siteinfo/SiteInfoRepository -import &quot;${basedir}/data/siteInfoDefinition.xml&quot; -workspace initialSiteInfoDefImport${touch.time} -comment initialSiteInfoDefImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/catalog/ProductCatalog -import &quot;${basedir}/data/departmentsDefinition.xml&quot; -workspace initialDepartmentsImport${touch.time} -comment initialDepartmentsImport${touch.time}"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/userprofiling/InternalProfileRepository -import &quot;${basedir}/data/bccUserProfiles.xml&quot;"/>
+		</exec>
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/commerce/catalog/ProductCatalog -import &quot;${basedir}/data/pageSlotsDefinition.xml&quot; -workspace initialPageSlotsImport${touch.time} -comment initialPageSlotsImport${touch.time}"/>
+		</exec>
+		
+	</target>
+
+    <target name="updateViewMappings" description="Update Ann Taylor View Mappings">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/bizui/viewmapping/ViewMappingRepository -import &quot;${basedir}/data/viewMapping.xml&quot;"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/bizui/viewmapping/ViewMappingRepository -import &quot;${basedir}/data/viewMapping.xml&quot;"/>
+		</exec>
+	</target>
+
+	<target name="exportCatalog" description="Export Catalog">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="exportRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Export -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot;  -r /atg/commerce/catalog/ProductCatalog -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/exportRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Export -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot;  -r /atg/commerce/catalog/ProductCatalog -batchSize 1000 -v"/>
+		</exec>
+
+	</target>
+
+	<target name="exportCatalogAssets" description="Export Catalog Asset">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="startSQLRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Export -export regularCategory &quot;${basedir}/data/catalogAssets.xml&quot; -repository /atg/commerce/catalog/ProductCatalog"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Export -export regularCategory &quot;${basedir}/data/catalogAssets.xml&quot; -repository /atg/commerce/catalog/ProductCatalog"/>
+		</exec>
+
+	</target>
+
+
+	<target name="importDCS" description="Import DCS">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>	
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/startSQLRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -repository /atg/userprofiling/PersonalizationRepository -import &quot;${basedir}/data/initial-segment-lists.xml&quot; -project DCSUI -user publishing -comment DCSUI -workflow /Commerce/editCommerceAssets.wdl"/>
+		</exec>
+
+	</target>
+
+	
+	
+	<target name="exportPriceLists" description="Export Price Lists">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="exportRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Export -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot;  -r /atg/commerce/pricing/priceLists/PriceLists -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/exportRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Export -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot;  -r /atg/commerce/pricing/priceLists/PriceLists -batchSize 1000 -v"/>
+		</exec>
+
+	</target>
+		
+	<target name="importVersionedCatalog" description="Import Catalog (versioned)">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<tstamp>
+			<format property="touch.time" pattern="MM-dd-yyyy-hh:mm:ss"/>
+		</tstamp>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot;  -r /atg/commerce/catalog/ProductCatalog -batchSize 1000 -v -workspace importCatalog${touch.time} -checkinComment initialCatalog${touch.time} -username publishing"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot;  -r /atg/commerce/catalog/ProductCatalog -batchSize 1000 -v -workspace importCatalog${touch.time} -checkinComment initialCatalog${touch.time} -username publishing"/>
+		</exec>
+
+	</target>
+
+	<target name="importVersionedPriceLists" description="Import Price Lists (versioned)">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<tstamp>
+			<format property="touch.time" pattern="MM-dd-yyyy-hh:mm:ss"/>
+		</tstamp>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot;  -r /atg/commerce/pricing/priceLists/PriceLists -batchSize 1000 -v -workspace importPriceLists${touch.time} -checkinComment initialPriceLists${touch.time} -username publishing"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot;  -r /atg/commerce/pricing/priceLists/PriceLists -batchSize 1000 -v -workspace importPriceLists${touch.time} -checkinComment initialPriceLists${touch.time} -username publishing"/>
+		</exec>
+
+	</target>	
+	<target name="importCommerceCatalog" description="Import Catalog (cata/catab)">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot;  -r /atg/commerce/catalog/ProductCatalog -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot;  -r /atg/commerce/catalog/ProductCatalog -batchSize 1000 -v"/>
+		</exec>
+
+	</target>
+
+	<target name="importCommercePriceLists" description="Import Price Lists (cata/catab)">
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>				
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot;  -r /atg/commerce/pricing/priceLists/PriceLists -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot;  -r /atg/commerce/pricing/priceLists/PriceLists -batchSize 1000 -v"/>
+		</exec>
+
+	</target>
+	
+		
+    <target name="importTestData" description="Imports and Initializes BCC Test Data">
+		<tstamp>
+			<format property="touch.time" pattern="MM-dd-yyyy-hh:mm:ss"/>
+		</tstamp>
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>
+				
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot; -workspace catalogTestData${touch.time} -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot; -workspace priceListsTestData${touch.time} -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file &quot;${basedir}/data/AnnTaylorSiteInfo.jar&quot; -workspace siteInfoTestData${touch.time} -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file ${basedir}/data/AnnTaylorCatalog.jar -workspace catalogTestData${touch.time} -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file ${basedir}/data/AnnTaylorPriceLists.jar -workspace priceListsTestData${touch.time} -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.Import -file ${basedir}/data/AnnTaylorSiteInfo.jar -workspace siteInfoTestData${touch.time} -batchSize 1000 -v"/>
+		</exec>
+	</target>
+
+	<target name="importTestDataCommerce" description="Imports and Initializes Test Data to Commerce DBs">
+		<tstamp>
+			<format property="touch.time" pattern="MM-dd-yyyy-hh:mm:ss"/>
+		</tstamp>
+  
+        <mkdir dir="${install.dir}/data" />
+        <copy todir="${install.dir}/data">
+            <fileset dir="${build.dir}/../data" />
+        </copy>
+				
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot; -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot; -batchSize 1000 -v"/>
+		</exec>
+		
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorSiteInfo.jar&quot; -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorCatalog.jar&quot; -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorPriceLists.jar&quot; -batchSize 1000 -v"/>
+		</exec>
+
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="${dynamo.home}/bin/importRepository" os="SunOS,Linux">
+		    <arg line="-m ${install.unit}.proj.SMCommerce.Versioned.data.ImportCommerce -file &quot;${basedir}/data/AnnTaylorSiteInfo.jar&quot; -batchSize 1000 -v"/>
+		</exec>
+	</target>
+    
+    <!-- DVC Content/Roles imports - note that these need to be kept in sync with the servers configuration -->
+    <target name="importdata" description="Imports merchandising content">
+		<!--If we need to refresh the Pub data load - it first must be extracted from localProd since we need it in .jar format -->
+		
+		<!--
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="exportRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${module.root.parent}.store -s ${pub.server.name} -f ${project.root.dir}/assets/content.jar -r /att/dvc/repositories/DevCentralMainRepository"/>
+		</exec>
+		
+		<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="exportRepository" os="SunOS,Linux">
+		    <arg line="-m ${module.root.parent}.store -s ${pub.server.name} -f ${project.root.dir}/assets/content.jar -r /att/dvc/repositories/DevCentralMainRepository"/>
+		</exec>  
+		-->  
+		<echo message="pub.module.for.import=${pub.module.for.import}"/>
+		<echo message="pub.server.name=${pub.server.name}"/>
+    			
+	    	<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository.bat" os="Windows 2000,Windows NT, Windows XP, Windows 2003">
+		    <arg line="-m ${pub.module.for.import} -s ${pub.server.name} -f ${basedir}/data/catalogdata.jar -workspace InitialImport -checkincomment initialcatalogload -noDeleteAll"/>
+		</exec>
+		
+	    	<exec dir="${dynamo.home}/bin/" vmlauncher="false" executable="importRepository" os="SunOS,Linux">
+		    <arg line="-m ${pub.module.for.import} -s ${pub.server.name} -f ${basedir}/data/catalogdata.jar -workspace InitialImport -checkincomment initialcatalogload -noDeleteAll"/>
+		</exec>
+		
+    </target>
+    
+      
+</project>

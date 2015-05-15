@@ -1,0 +1,13 @@
+Manifest-Version: 1.0a
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.5.0_11-b03 (Sun Microsystems Inc.)
+ATG-Config-Path: config/
+ATG-J2EE: j2ee-app
+ATG-Web-Module: 
+ATG-Class-Path: 
+ATG-Required: DAS DAF.Deployment RL DAS-UI DPS DPS.InternalUsers DSS DSS.InternalUsers  DAS B2CCommerce DCS.DynamicCustomCatalogs
+ATG-Client-Class-Path: 
+Name:  
+ATG-Client-Update-File: true
+
+
