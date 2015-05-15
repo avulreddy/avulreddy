@@ -1,0 +1,745 @@
+**** info	Sat Mar 14 00:32:30 CDT 2015	1426311150702	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Sat Mar 14 00:32:43 CDT 2015	1426311163240	/atg/dynamo/server/OPSSInitializer	The Java Platform Services (JPS) have been started in JSE mode.
+**** info	Sat Mar 14 00:32:46 CDT 2015	1426311166981	/atg/dynamo/service/jdbc/SDSRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:47 CDT 2015	1426311167152	/atg/dynamo/service/jdbc/SQLRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:48 CDT 2015	1426311168652	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:49 CDT 2015	1426311169073	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Sat Mar 14 00:32:49 CDT 2015	1426311169404	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:49 CDT 2015	1426311169850	/atg/content/ContentManagementRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:49 CDT 2015	1426311169860	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:49 CDT 2015	1426311169896	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:51 CDT 2015	1426311171053	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:51 CDT 2015	1426311171061	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:51 CDT 2015	1426311171297	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:51 CDT 2015	1426311171716	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:54 CDT 2015	1426311174005	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 00:32:54 CDT 2015	1426311174615	/atg/commerce/pricing/TaxPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 00:32:55 CDT 2015	1426311175536	/atg/commerce/order/OrderRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:56 CDT 2015	1426311176476	/atg/commerce/inventory/InventoryRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:56 CDT 2015	1426311176528	/atg/commerce/fulfillment/FulfillmentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 00:32:57 CDT 2015	1426311177003	/atg/commerce/pricing/OrderPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 00:32:57 CDT 2015	1426311177039	/atg/commerce/PipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 00:32:57 CDT 2015	1426311177672	/atg/commerce/approval/ApprovalPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 00:32:57 CDT 2015	1426311177888	/atg/commerce/payment/PaymentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 00:32:57 CDT 2015	1426311177980	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 00:32:58 CDT 2015	1426311178028	/atg/commerce/invoice/InvoiceRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:32:58 CDT 2015	1426311178794	/atg/commerce/pricing/ItemPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 00:32:59 CDT 2015	1426311179743	/atg/systemconfiguration/SystemConfigurationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:00 CDT 2015	1426311180132	/atg/dynamo/security/AdminSqlRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:00 CDT 2015	1426311180150	/atg/dynamo/security/AdminAccountInitializer	Initializing account database /atg/dynamo/security/AdminAccountManager from /atg/dynamo/security/SimpleXmlUserAuthority
+**** info	Sat Mar 14 00:33:00 CDT 2015	1426311180699	/atg/dynamo/security/opss/csf/CredentialStoreManager	Credential Store services are enabled and running
+**** info	Sat Mar 14 00:33:01 CDT 2015	1426311181890	/atg/scenario/XrefParserManager	XrefParserManager startup complete
+**** info	Sat Mar 14 00:33:02 CDT 2015	1426311182736	/atg/scenario/ScenarioManager	Initializing individual process server Avul-PC:8851. Current configured Process Editor Server is set to localhost:8851
+**** info	Sat Mar 14 00:33:05 CDT 2015	1426311185056	/atg/scenario/CollectiveEmailSender	Resolving reference to /atg/userprofiling/email/TemplateEmailSender
+**** info	Sat Mar 14 00:33:05 CDT 2015	1426311185198	/atg/reporting/DatasetRecorderManager	Validating all dataset mappers
+**** info	Sat Mar 14 00:33:05 CDT 2015	1426311185895	/atg/commerce/order/abandoned/AbandonedOrderLogRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188014	/atg/reporting/datacollection/search/QueryLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188015	/atg/reporting/datacollection/search/QueryLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188032	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188033	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188042	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188043	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188109	/atg/userprofiling/PersonalizationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188128	/atg/reporting/datacollection/userprofiling/RegistrationLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188162	/atg/adc/ADCPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 00:33:08 CDT 2015	1426311188267	/atg/clicktoconnect/C2CRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:09 CDT 2015	1426311189912	/atg/content/media/MediaRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:10 CDT 2015	1426311190047	/atg/dynamo/server/SQLRepositoryEventServer	Service /atg/dynamo/server/SQLRepositoryEventServer listening at http://Avul-PC:65410/
+**** info	Sat Mar 14 00:33:10 CDT 2015	1426311190075	/atg/commerce/custsvc/CsrRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:10 CDT 2015	1426311190134	/atg/store/stores/StoreContentRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:10 CDT 2015	1426311190877	/atg/sitemap/SitemapRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:10 CDT 2015	1426311190962	/atg/commerce/catalog/CatalogMaintenanceService	Resolving reference to /atg/commerce/catalog/custom/CatalogMaintenanceService
+**** info	Sat Mar 14 00:33:12 CDT 2015	1426311192200	/atg/dynamo/service/jdbc/DirectJTDataSource_production	Resolving reference to /atg/dynamo/service/jdbc/DirectJTDataSource
+**** info	Sat Mar 14 00:33:12 CDT 2015	1426311192245	/atg/dynamo/server/SQLRepositoryEventServer_production	Service /atg/dynamo/server/SQLRepositoryEventServer_production listening at http://Avul-PC:65418/
+**** info	Sat Mar 14 00:33:13 CDT 2015	1426311193316	/atg/search/repository/IncrementalItemQueueRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:14 CDT 2015	1426311194981	/atg/commerce/endeca/index/CategoryTreeService	service started.
+**** info	Sat Mar 14 00:33:15 CDT 2015	1426311195139	/atg/dynamo/server/RmiServer	Service /atg/dynamo/server/RmiServer listening at rmi://Avul-PC:8861/
+**** info	Sat Mar 14 00:33:15 CDT 2015	1426311195979	/atg/dynamo/servlet/dafpipeline/HeadRestServlet	REST servlet pipeline initialized.
+**** info	Sat Mar 14 00:33:16 CDT 2015	1426311196582	/atg/dynamo/service/ServerLockManager	Service /atg/dynamo/service/ServerLockManager listening at http://Avul-PC:9012/
+**** info	Sat Mar 14 00:33:18 CDT 2015	1426311198029	/atg/registry/PipelineRegistry	Starting Pipeline Registry.
+**** info	Sat Mar 14 00:33:18 CDT 2015	1426311198556	/atg/textsearch/repository/SearchRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:18 CDT 2015	1426311198603	/atg/userprofiling/textsearch/ProfileOutputConfig	Starting IOC listener for ProfileOutputConfig
+**** info	Sat Mar 14 00:33:19 CDT 2015	1426311199164	/atg/commerce/textsearch/OrderOutputConfig	Starting IOC listener for OrderOutputConfig
+**** info	Sat Mar 14 00:33:19 CDT 2015	1426311199697	/atg/tracking/UsageTrackingRepository	SQL Repository startup complete
+**** info	Sat Mar 14 00:33:20 CDT 2015	1426311200070	/atg/commerce/catalog/CatalogChangesListener	Resolving reference to /atg/commerce/catalog/custom/CatalogChangesListener
+**** info	Sat Mar 14 01:00:00 CDT 2015	1426312800002	/atg/devtools/ComponentIndex	Creating component index D:\ATG\11.1\home\servers\ATGProduction\data\componentIndex.ser
+**** info	Sat Mar 14 01:00:12 CDT 2015	1426312812253	/atg/devtools/ComponentIndex	Saving component index D:\ATG\11.1\home\servers\ATGProduction\data\componentIndex.ser
+**** info	Sat Mar 14 01:00:12 CDT 2015	1426312812321	/atg/devtools/ComponentIndex	Component indexing complete.
+**** info	Sat Mar 14 01:00:12 CDT 2015	1426312812321	/atg/devtools/DocumentIndex	Building document index D:\ATG\11.1\home\servers\ATGProduction\data\documentIndex.ser
+**** info	Sat Mar 14 01:00:12 CDT 2015	1426312812421	/atg/devtools/DocumentIndex	Saving document index D:\ATG\11.1\home\servers\ATGProduction\data\documentIndex.ser
+**** info	Sat Mar 14 01:00:12 CDT 2015	1426312812427	/atg/devtools/DocumentIndex	Document indexing complete.
+**** info	Sat Mar 14 07:54:12 CDT 2015	1426337652315	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Sat Mar 14 07:54:27 CDT 2015	1426337667419	/atg/dynamo/server/OPSSInitializer	The Java Platform Services (JPS) have been started in JSE mode.
+**** info	Sat Mar 14 07:54:30 CDT 2015	1426337670927	/atg/dynamo/service/jdbc/SDSRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:31 CDT 2015	1426337671037	/atg/dynamo/service/jdbc/SQLRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:32 CDT 2015	1426337672459	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:32 CDT 2015	1426337672876	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Sat Mar 14 07:54:33 CDT 2015	1426337673082	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:33 CDT 2015	1426337673287	/atg/content/ContentManagementRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:33 CDT 2015	1426337673294	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:33 CDT 2015	1426337673330	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:34 CDT 2015	1426337674008	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:34 CDT 2015	1426337674017	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:34 CDT 2015	1426337674249	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:34 CDT 2015	1426337674613	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:36 CDT 2015	1426337676757	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 07:54:37 CDT 2015	1426337677291	/atg/commerce/pricing/TaxPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 07:54:38 CDT 2015	1426337678482	/atg/commerce/order/OrderRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:38 CDT 2015	1426337678883	/atg/commerce/inventory/InventoryRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:38 CDT 2015	1426337678956	/atg/commerce/fulfillment/FulfillmentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 07:54:39 CDT 2015	1426337679988	/atg/commerce/pricing/OrderPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 07:54:40 CDT 2015	1426337680026	/atg/commerce/PipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 07:54:40 CDT 2015	1426337680736	/atg/commerce/approval/ApprovalPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 07:54:40 CDT 2015	1426337680941	/atg/commerce/payment/PaymentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 07:54:41 CDT 2015	1426337681040	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 07:54:41 CDT 2015	1426337681085	/atg/commerce/invoice/InvoiceRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:41 CDT 2015	1426337681703	/atg/commerce/pricing/ItemPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 07:54:42 CDT 2015	1426337682750	/atg/systemconfiguration/SystemConfigurationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:42 CDT 2015	1426337682980	/atg/dynamo/security/AdminSqlRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:42 CDT 2015	1426337682992	/atg/dynamo/security/AdminAccountInitializer	Initializing account database /atg/dynamo/security/AdminAccountManager from /atg/dynamo/security/SimpleXmlUserAuthority
+**** info	Sat Mar 14 07:54:43 CDT 2015	1426337683488	/atg/dynamo/security/opss/csf/CredentialStoreManager	Credential Store services are enabled and running
+**** info	Sat Mar 14 07:54:43 CDT 2015	1426337683727	/atg/scenario/XrefParserManager	XrefParserManager startup complete
+**** info	Sat Mar 14 07:54:45 CDT 2015	1426337685429	/atg/scenario/ScenarioManager	Initializing individual process server Avul-PC:8851. Current configured Process Editor Server is set to localhost:8851
+**** info	Sat Mar 14 07:54:47 CDT 2015	1426337687643	/atg/scenario/CollectiveEmailSender	Resolving reference to /atg/userprofiling/email/TemplateEmailSender
+**** info	Sat Mar 14 07:54:47 CDT 2015	1426337687768	/atg/reporting/DatasetRecorderManager	Validating all dataset mappers
+**** info	Sat Mar 14 07:54:48 CDT 2015	1426337688414	/atg/commerce/order/abandoned/AbandonedOrderLogRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689567	/atg/reporting/datacollection/search/QueryLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689568	/atg/reporting/datacollection/search/QueryLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689586	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689586	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689595	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689596	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689652	/atg/userprofiling/PersonalizationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689665	/atg/reporting/datacollection/userprofiling/RegistrationLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689685	/atg/adc/ADCPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 07:54:49 CDT 2015	1426337689786	/atg/clicktoconnect/C2CRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:51 CDT 2015	1426337691104	/atg/content/media/MediaRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:51 CDT 2015	1426337691253	/atg/dynamo/server/SQLRepositoryEventServer	Service /atg/dynamo/server/SQLRepositoryEventServer listening at http://Avul-PC:62959/
+**** info	Sat Mar 14 07:54:51 CDT 2015	1426337691283	/atg/commerce/custsvc/CsrRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:51 CDT 2015	1426337691333	/atg/store/stores/StoreContentRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:51 CDT 2015	1426337691885	/atg/sitemap/SitemapRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:52 CDT 2015	1426337692153	/atg/dynamo/server/RmiServer	Service /atg/dynamo/server/RmiServer listening at rmi://Avul-PC:8861/
+**** info	Sat Mar 14 07:54:54 CDT 2015	1426337694016	/atg/dynamo/servlet/dafpipeline/HeadRestServlet	REST servlet pipeline initialized.
+**** info	Sat Mar 14 07:54:54 CDT 2015	1426337694478	/atg/dynamo/service/ServerLockManager	Service /atg/dynamo/service/ServerLockManager listening at http://Avul-PC:9012/
+**** info	Sat Mar 14 07:54:54 CDT 2015	1426337694852	/atg/registry/PipelineRegistry	Starting Pipeline Registry.
+**** info	Sat Mar 14 07:54:55 CDT 2015	1426337695549	/atg/dynamo/service/jdbc/DirectJTDataSource_production	Resolving reference to /atg/dynamo/service/jdbc/DirectJTDataSource
+**** info	Sat Mar 14 07:54:55 CDT 2015	1426337695660	/atg/textsearch/repository/SearchRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:55 CDT 2015	1426337695821	/atg/userprofiling/textsearch/ProfileOutputConfig	Starting IOC listener for ProfileOutputConfig
+**** info	Sat Mar 14 07:54:56 CDT 2015	1426337696020	/atg/dynamo/server/SQLRepositoryEventServer_production	Service /atg/dynamo/server/SQLRepositoryEventServer_production listening at http://Avul-PC:62982/
+**** info	Sat Mar 14 07:54:56 CDT 2015	1426337696053	/atg/search/repository/IncrementalItemQueueRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:58 CDT 2015	1426337698415	/atg/commerce/endeca/index/CategoryTreeService	service started.
+**** info	Sat Mar 14 07:54:58 CDT 2015	1426337698499	/atg/commerce/textsearch/OrderOutputConfig	Starting IOC listener for OrderOutputConfig
+**** info	Sat Mar 14 07:54:58 CDT 2015	1426337698845	/atg/tracking/UsageTrackingRepository	SQL Repository startup complete
+**** info	Sat Mar 14 07:54:59 CDT 2015	1426337699132	/atg/commerce/catalog/CatalogChangesListener	Resolving reference to /atg/commerce/catalog/custom/CatalogChangesListener
+**** info	Sat Mar 14 07:58:21 CDT 2015	1426337901970	/atg/adc/ADCPipelineManager	Stopping PipelineManager.
+**** info	Sat Mar 14 17:03:55 CDT 2015	1426370635221	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Sat Mar 14 17:04:00 CDT 2015	1426370640867	/atg/dynamo/server/OPSSInitializer	The Java Platform Services (JPS) have been started in JSE mode.
+**** info	Sat Mar 14 17:04:03 CDT 2015	1426370643474	/atg/dynamo/service/jdbc/SDSRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:03 CDT 2015	1426370643638	/atg/dynamo/service/jdbc/SQLRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:03 CDT 2015	1426370643908	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644149	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644282	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644356	/atg/content/ContentManagementRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644364	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644414	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644649	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644659	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:04 CDT 2015	1426370644972	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:05 CDT 2015	1426370645034	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:06 CDT 2015	1426370646620	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 17:04:06 CDT 2015	1426370646990	/atg/commerce/pricing/TaxPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 17:04:07 CDT 2015	1426370647355	/atg/commerce/order/OrderRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:07 CDT 2015	1426370647731	/atg/commerce/inventory/InventoryRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:07 CDT 2015	1426370647785	/atg/commerce/fulfillment/FulfillmentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 17:04:08 CDT 2015	1426370648193	/atg/commerce/pricing/OrderPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 17:04:08 CDT 2015	1426370648214	/atg/commerce/PipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 17:04:09 CDT 2015	1426370649266	/atg/commerce/approval/ApprovalPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 17:04:09 CDT 2015	1426370649451	/atg/commerce/payment/PaymentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 17:04:09 CDT 2015	1426370649520	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 17:04:09 CDT 2015	1426370649563	/atg/commerce/invoice/InvoiceRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:10 CDT 2015	1426370650113	/atg/commerce/pricing/ItemPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 17:04:10 CDT 2015	1426370650932	/atg/systemconfiguration/SystemConfigurationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:11 CDT 2015	1426370651151	/atg/dynamo/security/AdminSqlRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:11 CDT 2015	1426370651160	/atg/dynamo/security/AdminAccountInitializer	Initializing account database /atg/dynamo/security/AdminAccountManager from /atg/dynamo/security/SimpleXmlUserAuthority
+**** info	Sat Mar 14 17:04:11 CDT 2015	1426370651539	/atg/dynamo/security/opss/csf/CredentialStoreManager	Credential Store services are enabled and running
+**** info	Sat Mar 14 17:04:11 CDT 2015	1426370651690	/atg/scenario/XrefParserManager	XrefParserManager startup complete
+**** info	Sat Mar 14 17:04:13 CDT 2015	1426370653202	/atg/scenario/ScenarioManager	Initializing individual process server Avul-PC:8851. Current configured Process Editor Server is set to localhost:8851
+**** info	Sat Mar 14 17:04:14 CDT 2015	1426370654288	/atg/scenario/CollectiveEmailSender	Resolving reference to /atg/userprofiling/email/TemplateEmailSender
+**** info	Sat Mar 14 17:04:14 CDT 2015	1426370654371	/atg/reporting/DatasetRecorderManager	Validating all dataset mappers
+**** info	Sat Mar 14 17:04:15 CDT 2015	1426370655492	/atg/commerce/order/abandoned/AbandonedOrderLogRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656270	/atg/reporting/datacollection/search/QueryLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656271	/atg/reporting/datacollection/search/QueryLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656287	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656288	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656297	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656297	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656355	/atg/userprofiling/PersonalizationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656368	/atg/reporting/datacollection/userprofiling/RegistrationLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656384	/atg/adc/ADCPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 17:04:16 CDT 2015	1426370656489	/atg/clicktoconnect/C2CRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:17 CDT 2015	1426370657589	/atg/content/media/MediaRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:17 CDT 2015	1426370657709	/atg/dynamo/server/SQLRepositoryEventServer	Service /atg/dynamo/server/SQLRepositoryEventServer listening at http://Avul-PC:58715/
+**** info	Sat Mar 14 17:04:17 CDT 2015	1426370657740	/atg/commerce/custsvc/CsrRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:17 CDT 2015	1426370657790	/atg/store/stores/StoreContentRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:18 CDT 2015	1426370658169	/atg/sitemap/SitemapRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:18 CDT 2015	1426370658261	/atg/dynamo/server/RmiServer	Service /atg/dynamo/server/RmiServer listening at rmi://Avul-PC:8861/
+**** info	Sat Mar 14 17:04:19 CDT 2015	1426370659754	/atg/dynamo/servlet/dafpipeline/HeadRestServlet	REST servlet pipeline initialized.
+**** info	Sat Mar 14 17:04:20 CDT 2015	1426370660087	/atg/dynamo/service/ServerLockManager	Service /atg/dynamo/service/ServerLockManager listening at http://Avul-PC:9012/
+**** info	Sat Mar 14 17:04:20 CDT 2015	1426370660429	/atg/registry/PipelineRegistry	Starting Pipeline Registry.
+**** info	Sat Mar 14 17:04:20 CDT 2015	1426370660655	/atg/dynamo/service/jdbc/DirectJTDataSource_production	Resolving reference to /atg/dynamo/service/jdbc/DirectJTDataSource
+**** info	Sat Mar 14 17:04:20 CDT 2015	1426370660708	/atg/textsearch/repository/SearchRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:20 CDT 2015	1426370660836	/atg/userprofiling/textsearch/ProfileOutputConfig	Starting IOC listener for ProfileOutputConfig
+**** info	Sat Mar 14 17:04:20 CDT 2015	1426370660987	/atg/dynamo/server/SQLRepositoryEventServer_production	Service /atg/dynamo/server/SQLRepositoryEventServer_production listening at http://Avul-PC:58729/
+**** info	Sat Mar 14 17:04:21 CDT 2015	1426370661018	/atg/search/repository/IncrementalItemQueueRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:21 CDT 2015	1426370661852	/atg/commerce/endeca/index/CategoryTreeService	service started.
+**** info	Sat Mar 14 17:04:21 CDT 2015	1426370661949	/atg/commerce/textsearch/OrderOutputConfig	Starting IOC listener for OrderOutputConfig
+**** info	Sat Mar 14 17:04:23 CDT 2015	1426370663377	/atg/tracking/UsageTrackingRepository	SQL Repository startup complete
+**** info	Sat Mar 14 17:04:23 CDT 2015	1426370663695	/atg/commerce/catalog/CatalogChangesListener	Resolving reference to /atg/commerce/catalog/custom/CatalogChangesListener
+**** info	Sat Mar 14 17:33:50 CDT 2015	1426372430046	/atg/dynamo/servlet/adminpipeline/AuthenticationServlet	HTML admin authentication failure from 127.0.0.1(/dyn/admin)
+**** info	Sat Mar 14 17:34:02 CDT 2015	1426372442061	/atg/dynamo/servlet/adminpipeline/AuthenticationServlet	HTML admin authentication failure from 127.0.0.1(/dyn/admin)
+**** info	Sat Mar 14 17:34:10 CDT 2015	1426372450577	/atg/dynamo/servlet/adminpipeline/Authenticator	Authenticator allowing access for administrators-group.
+**** info	Sat Mar 14 17:34:10 CDT 2015	1426372450751	/atg/dynamo/servlet/pagecompile/ExtendedJhtmlPageProcessor	Processing /index.jhtml to D:\ATG\11.1\home\servers\ATGProduction\pagebuild\_dasadmin_3__UTF_s8\_index.java
+**** info	Sat Mar 14 17:34:10 CDT 2015	1426372450867	/atg/dynamo/servlet/pagecompile/ExtendedJhtmlPageProcessor	Compiling D:\ATG\11.1\home\servers\ATGProduction\pagebuild\_dasadmin_3__UTF_s8\_index.java
+**** info	Sat Mar 14 17:34:55 CDT 2015	1426372495920	/atg/dynamo/security/ComponentSecurityDomain	Registered ComponentSecurityDomain with the /atg/registry/SecurityDomains registry
+**** info	Sat Mar 14 17:35:45 CDT 2015	1426372545553	/atg/commerce/endeca/index/CategoryToDimensionOutputConfig	Starting bulk load
+**** info	Sat Mar 14 17:35:45 CDT 2015	1426372545615	/atg/endeca/index/ConfigImportDocumentSubmitter	Opening configuration repository connection for application CRS
+**** info	Sat Mar 14 17:35:45 CDT 2015	1426372545842	/atg/commerce/search/ProductCatalogOutputConfig	Starting bulk load
+**** info	Sat Mar 14 17:35:45 CDT 2015	1426372545846	/atg/commerce/search/StoreLocationOutputConfig	Starting bulk load
+**** info	Sat Mar 14 17:35:51 CDT 2015	1426372551348	/atg/endeca/index/DimensionDocumentSubmitter	Will attempt to contact record store "CRS-dimvals" on host "localhost" on port 8,500
+**** info	Sat Mar 14 17:35:52 CDT 2015	1426372552859	/atg/content/search/ArticleOutputConfig	Starting bulk load
+**** info	Sat Mar 14 17:35:52 CDT 2015	1426372552859	/atg/content/search/MediaContentOutputConfig	Starting bulk load
+**** info	Sat Mar 14 17:35:59 CDT 2015	1426372559064	/atg/endeca/index/DataDocumentSubmitter	Will attempt to contact record store "CRS-data" on host "localhost" on port 8,500
+**** info	Sat Mar 14 17:35:59 CDT 2015	1426372559263	/atg/search/repository/BulkLoader	Processed 55 items for /atg/commerce/endeca/index/CategoryToDimensionOutputConfig in 3.557 seconds.  Averaged 15.462468372223784 items including sub-items per second
+**** info	Sat Mar 14 17:35:59 CDT 2015	1426372559292	/atg/commerce/endeca/index/CategoryToDimensionOutputConfig	Bulk load completed with "true" result in 13,739 milliseconds.
+**** info	Sat Mar 14 17:36:00 CDT 2015	1426372560034	/atg/search/repository/BulkLoader	Processed 96 items for /atg/commerce/search/StoreLocationOutputConfig in 4.074 seconds.  Averaged 23.564064801178205 items including sub-items per second
+**** info	Sat Mar 14 17:36:00 CDT 2015	1426372560093	/atg/commerce/search/StoreLocationOutputConfig	Bulk load completed with "true" result in 14,247 milliseconds.
+**** info	Sat Mar 14 17:36:03 CDT 2015	1426372563702	/atg/search/repository/BulkLoader	Processed 16 items for /atg/content/search/MediaContentOutputConfig in 0.798 seconds.  Averaged 20.050125313283207 items including sub-items per second
+**** info	Sat Mar 14 17:36:03 CDT 2015	1426372563709	/atg/search/repository/BulkLoader	Processed 8 items for /atg/content/search/ArticleOutputConfig in 0.815 seconds.  Averaged 9.815950920245399 items including sub-items per second
+**** info	Sat Mar 14 17:36:34 CDT 2015	1426372594616	/atg/content/search/ArticleOutputConfig	Bulk load completed with "true" result in 41,757 milliseconds.
+**** info	Sat Mar 14 17:36:34 CDT 2015	1426372594658	/atg/content/search/MediaContentOutputConfig	Bulk load completed with "true" result in 41,799 milliseconds.
+**** info	Sat Mar 14 17:50:51 CDT 2015	1426373451576	/atg/search/repository/BulkLoader	Processed 252 items for /atg/commerce/search/ProductCatalogOutputConfig in 895.66 seconds.  Averaged 0.28135676484380234 items including sub-items per second
+**** info	Sat Mar 14 17:50:51 CDT 2015	1426373451583	/atg/commerce/search/ProductCatalogOutputConfig	Bulk load completed with "false" result in 905,741 milliseconds.
+**** info	Sat Mar 14 17:50:51 CDT 2015	1426373451584	/atg/endeca/index/DimensionDocumentSubmitter	Ending session of record store CRS-dimvals with transactionId 3 (submitted 294 records).
+**** info	Sat Mar 14 17:51:11 CDT 2015	1426373471000	/atg/endeca/index/DataDocumentSubmitter	Ending session of record store CRS-data with transactionId 3 (submitted 4,324 records).
+**** info	Sat Mar 14 17:51:27 CDT 2015	1426373487011	/atg/endeca/index/ConfigImportDocumentSubmitter	Ending session for application CRS (submitted 113 records).
+**** info	Sat Mar 14 18:02:00 CDT 2015	1426374120692	/atg/seo/SEORepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163656	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163656	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163657	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163657	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163657	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163657	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163657	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(detailed)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163658	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(currentCatalog)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163762	/atg/commerce/pricing/PricingActor	[INFO][/atg/commerce/pricing/PricingActor(productPriceRanges)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163763	/atg/commerce/pricing/PricingActor	[INFO][/atg/commerce/pricing/PricingActor(skuPrices)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163810	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getCurrentCatalogRootCategories)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163811	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getCategory)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:43 CDT 2015	1426374163811	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getSku)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164407	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164407	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164408	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmReturn-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164409	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmReturn-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164409	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmation)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164409	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164409	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164409	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164410	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(modifiableRefundsMethodList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164410	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isCurrentOrderReturnable)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164410	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isReturnActive)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164410	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(returns)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164410	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(nonReturnItemDetails)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164411	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(orderReturnInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164411	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isReturnable)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164411	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(outputReturnDetails)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164527	/atg/commerce/ShoppingCartActor	[INFO][/atg/commerce/ShoppingCartActor(detailed)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:44 CDT 2015	1426374164951	/atg/commerce/order/purchase/CommitOrderActor	[INFO][/atg/commerce/order/purchase/CommitOrderActor(commitOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165318	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(getShippingGroups)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165318	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(getAllCommerceItemShippingInfos)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165320	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165320	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165320	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165320	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165320	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:45 CDT 2015	1426374165320	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166058	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166059	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166059	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166059	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addItemToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166059	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addItemToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166060	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166060	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166060	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166061	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166061	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166061	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166061	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166062	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166062	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166062	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166062	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166063	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166063	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166063	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166063	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166064	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166066	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166067	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166068	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeAndAddItemToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166068	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeAndAddItemToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166068	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166068	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166069	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166069	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166069	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166389	/atg/store/droplet/StoreTextActor	[INFO][/atg/store/droplet/StoreTextActor(message)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166390	/atg/store/droplet/StoreTextActor	[INFO][/atg/store/droplet/StoreTextActor(contentList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:46 CDT 2015	1426374166864	/atg/userprofiling/ForgotPasswordActor	[INFO][/atg/userprofiling/ForgotPasswordActor(error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167066	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167066	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167066	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167066	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(convertWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167066	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(addToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167067	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(removeGiftItem)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167067	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(removeGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167067	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(createGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167067	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(updateGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167068	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(moveToWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167068	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(copyToWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167068	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(moveToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167068	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(copyToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167242	/atg/commerce/gifts/GiftlistSearchActor	[INFO][/atg/commerce/gifts/GiftlistSearchActor(error)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167747	/atg/targeting/TargetingServicesActor	[INFO][/atg/targeting/TargetingServicesActor(executeTargeter)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167748	/atg/targeting/TargetingServicesActor	[INFO][/atg/targeting/TargetingServicesActor(targeterSwitch)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167756	/atg/endeca/assembler/cartridge/actor/TargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/TargetedItemsActor(getTargetedItems)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167757	/atg/endeca/assembler/cartridge/actor/TargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/TargetedItemsActor(getProductInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167757	/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor(executeTargeter)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167758	/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor(getFullComponentPath)] Actor chain is not registered
+**** info	Sat Mar 14 18:02:47 CDT 2015	1426374167827	/atg/endeca/assembler/cartridge/actor/CategoryChildrenActor	[INFO][/atg/endeca/assembler/cartridge/actor/CategoryChildrenActor(categoryChildren)] Actor chain is not registered
+**** info	Sat Mar 14 18:15:02 CDT 2015	1426374902438	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Sat Mar 14 18:15:19 CDT 2015	1426374919100	/atg/dynamo/server/OPSSInitializer	The Java Platform Services (JPS) have been started in JSE mode.
+**** info	Sat Mar 14 18:15:23 CDT 2015	1426374923585	/atg/dynamo/service/jdbc/SDSRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:23 CDT 2015	1426374923864	/atg/dynamo/service/jdbc/SQLRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:26 CDT 2015	1426374926895	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:27 CDT 2015	1426374927647	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Sat Mar 14 18:15:27 CDT 2015	1426374927997	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:28 CDT 2015	1426374928372	/atg/content/ContentManagementRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:28 CDT 2015	1426374928379	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:28 CDT 2015	1426374928414	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:29 CDT 2015	1426374929579	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:29 CDT 2015	1426374929587	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:29 CDT 2015	1426374929868	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:30 CDT 2015	1426374930825	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:33 CDT 2015	1426374933891	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:15:35 CDT 2015	1426374935473	/atg/commerce/pricing/TaxPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:15:37 CDT 2015	1426374937136	/atg/commerce/order/OrderRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:37 CDT 2015	1426374937537	/atg/commerce/inventory/InventoryRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:37 CDT 2015	1426374937624	/atg/commerce/fulfillment/FulfillmentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:15:39 CDT 2015	1426374939063	/atg/commerce/pricing/OrderPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:15:39 CDT 2015	1426374939271	/atg/commerce/PipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:15:40 CDT 2015	1426374940236	/atg/commerce/approval/ApprovalPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:15:40 CDT 2015	1426374940512	/atg/commerce/payment/PaymentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:15:40 CDT 2015	1426374940672	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:15:40 CDT 2015	1426374940717	/atg/commerce/invoice/InvoiceRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:41 CDT 2015	1426374941403	/atg/commerce/pricing/ItemPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:15:43 CDT 2015	1426374943467	/atg/systemconfiguration/SystemConfigurationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:44 CDT 2015	1426374944216	/atg/dynamo/security/AdminSqlRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:44 CDT 2015	1426374944233	/atg/dynamo/security/AdminAccountInitializer	Initializing account database /atg/dynamo/security/AdminAccountManager from /atg/dynamo/security/SimpleXmlUserAuthority
+**** info	Sat Mar 14 18:15:44 CDT 2015	1426374944982	/atg/dynamo/security/opss/csf/CredentialStoreManager	Credential Store services are enabled and running
+**** info	Sat Mar 14 18:15:45 CDT 2015	1426374945262	/atg/scenario/XrefParserManager	XrefParserManager startup complete
+**** info	Sat Mar 14 18:15:47 CDT 2015	1426374947494	/atg/scenario/ScenarioManager	Initializing individual process server Avul-PC:8851. Current configured Process Editor Server is set to localhost:8851
+**** info	Sat Mar 14 18:15:49 CDT 2015	1426374949722	/atg/scenario/CollectiveEmailSender	Resolving reference to /atg/userprofiling/email/TemplateEmailSender
+**** info	Sat Mar 14 18:15:50 CDT 2015	1426374950824	/atg/reporting/DatasetRecorderManager	Validating all dataset mappers
+**** info	Sat Mar 14 18:15:51 CDT 2015	1426374951555	/atg/commerce/order/abandoned/AbandonedOrderLogRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955582	/atg/reporting/datacollection/search/QueryLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955583	/atg/reporting/datacollection/search/QueryLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955612	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955614	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955631	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955632	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955864	/atg/userprofiling/PersonalizationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955885	/atg/reporting/datacollection/userprofiling/RegistrationLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:15:55 CDT 2015	1426374955937	/atg/adc/ADCPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:15:56 CDT 2015	1426374956128	/atg/clicktoconnect/C2CRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:57 CDT 2015	1426374957785	/atg/content/media/MediaRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:57 CDT 2015	1426374957982	/atg/dynamo/server/SQLRepositoryEventServer	Service /atg/dynamo/server/SQLRepositoryEventServer listening at http://Avul-PC:50442/
+**** info	Sat Mar 14 18:15:58 CDT 2015	1426374958024	/atg/commerce/custsvc/CsrRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:58 CDT 2015	1426374958175	/atg/store/stores/StoreContentRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:58 CDT 2015	1426374958664	/atg/sitemap/SitemapRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:15:58 CDT 2015	1426374958919	/atg/dynamo/server/RmiServer	Service /atg/dynamo/server/RmiServer listening at rmi://Avul-PC:8861/
+**** info	Sat Mar 14 18:16:00 CDT 2015	1426374960821	/atg/dynamo/servlet/dafpipeline/HeadRestServlet	REST servlet pipeline initialized.
+**** info	Sat Mar 14 18:16:01 CDT 2015	1426374961331	/atg/dynamo/service/ServerLockManager	Service /atg/dynamo/service/ServerLockManager listening at http://Avul-PC:9012/
+**** info	Sat Mar 14 18:16:02 CDT 2015	1426374962217	/atg/registry/PipelineRegistry	Starting Pipeline Registry.
+**** info	Sat Mar 14 18:16:03 CDT 2015	1426374963047	/atg/dynamo/service/jdbc/DirectJTDataSource_production	Resolving reference to /atg/dynamo/service/jdbc/DirectJTDataSource
+**** info	Sat Mar 14 18:16:03 CDT 2015	1426374963098	/atg/textsearch/repository/SearchRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:16:03 CDT 2015	1426374963141	/atg/userprofiling/textsearch/ProfileOutputConfig	Starting IOC listener for ProfileOutputConfig
+**** info	Sat Mar 14 18:16:03 CDT 2015	1426374963359	/atg/dynamo/server/SQLRepositoryEventServer_production	Service /atg/dynamo/server/SQLRepositoryEventServer_production listening at http://Avul-PC:50472/
+**** info	Sat Mar 14 18:16:03 CDT 2015	1426374963398	/atg/search/repository/IncrementalItemQueueRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:16:07 CDT 2015	1426374967241	/atg/commerce/endeca/index/CategoryTreeService	service started.
+**** info	Sat Mar 14 18:16:07 CDT 2015	1426374967433	/atg/commerce/textsearch/OrderOutputConfig	Starting IOC listener for OrderOutputConfig
+**** info	Sat Mar 14 18:16:07 CDT 2015	1426374967980	/atg/tracking/UsageTrackingRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:16:08 CDT 2015	1426374968349	/atg/commerce/catalog/CatalogChangesListener	Resolving reference to /atg/commerce/catalog/custom/CatalogChangesListener
+**** info	Sat Mar 14 18:28:21 CDT 2015	1426375701470	/atg/dynamo/servlet/adminpipeline/AuthenticationServlet	HTML admin authentication failure from 127.0.0.1(/dyn/admin/nucleus)
+**** info	Sat Mar 14 18:28:29 CDT 2015	1426375709781	/atg/dynamo/servlet/adminpipeline/Authenticator	Authenticator allowing access for administrators-group.
+**** info	Sat Mar 14 18:28:30 CDT 2015	1426375710016	/atg/dynamo/security/ComponentSecurityDomain	Registered ComponentSecurityDomain with the /atg/registry/SecurityDomains registry
+**** info	Sat Mar 14 18:28:56 CDT 2015	1426375736635	/atg/commerce/catalog/CatalogMaintenanceService	Resolving reference to /atg/commerce/catalog/custom/CatalogMaintenanceService
+**** info	Sat Mar 14 18:30:35 CDT 2015	1426375835057	/atg/registry/ContentRepositories/ProductCatalog-shadow	SQL Repository startup complete
+**** info	Sat Mar 14 18:30:35 CDT 2015	1426375835061	/atg/commerce/catalog/custom/CatalogMaintenanceService	Service CatalogMaintenance - processing functions: AGS_GENPROPERTIES 
+**** info	Sat Mar 14 18:30:35 CDT 2015	1426375835062	/atg/commerce/catalog/custom/CatalogMaintenanceService	Service Lock CatalogMaintenance obtained for service CatalogMaintenance.
+**** info	Sat Mar 14 18:30:35 CDT 2015	1426375835063	/atg/commerce/catalog/custom/AncestorGeneratorService	Service AncestorGenerator - processing functions: AGS_GENPROPERTIES 
+**** info	Sat Mar 14 18:30:35 CDT 2015	1426375835064	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:performService starting.
+**** info	Sat Mar 14 18:30:35 CDT 2015	1426375835064	/atg/commerce/catalog/custom/AncestorGeneratorService	Update Catalogs: started at Sat Mar 14 18:30:35 CDT 2015
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836330	/atg/commerce/catalog/custom/AncestorGeneratorService	Executing count queries for base catalogs, categories and folders.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836379	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to process base catalogs.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836380	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree ended processing of base catalogs.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836385	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to process base categories.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836640	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree ended processing base categories.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836644	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to process base catalog folders.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836645	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree ended processing of base catalog folders.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836645	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to update repository for catalogs and categories.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836859	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree update to repository ended for catalogs and categories.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836859	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to update products and sku relationships.
+**** info	Sat Mar 14 18:30:36 CDT 2015	1426375836860	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product sites.
+**** info	Sat Mar 14 18:30:38 CDT 2015	1426375838869	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product sites.
+**** info	Sat Mar 14 18:30:38 CDT 2015	1426375838870	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product ancestor categories.
+**** info	Sat Mar 14 18:30:40 CDT 2015	1426375840270	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product ancestor categories.
+**** info	Sat Mar 14 18:30:40 CDT 2015	1426375840271	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product catalog.
+**** info	Sat Mar 14 18:30:41 CDT 2015	1426375841265	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product catalog.
+**** info	Sat Mar 14 18:30:41 CDT 2015	1426375841266	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product parent categories for catalogs.
+**** info	Sat Mar 14 18:30:41 CDT 2015	1426375841440	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product parent categories for catalogs.
+**** info	Sat Mar 14 18:30:41 CDT 2015	1426375841441	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update sku sites.
+**** info	Sat Mar 14 18:30:43 CDT 2015	1426375843381	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update sku sites.
+**** info	Sat Mar 14 18:30:43 CDT 2015	1426375843382	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update sku catalogs.
+**** info	Sat Mar 14 18:30:45 CDT 2015	1426375845195	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update sku catalogs.
+**** info	Sat Mar 14 18:30:45 CDT 2015	1426375845196	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree update ended for products and skus.
+**** info	Sat Mar 14 18:30:45 CDT 2015	1426375845196	/atg/commerce/catalog/custom/AncestorGeneratorService	Starting to invalidate cache for updated assets.
+**** info	Sat Mar 14 18:30:45 CDT 2015	1426375845231	/atg/commerce/catalog/custom/AncestorGeneratorService	Cache invalidation finished. Invalidated 1246 assets.
+**** info	Sat Mar 14 18:30:47 CDT 2015	1426375847667	/atg/commerce/catalog/custom/AncestorGeneratorService	Update Catalogs: ended at Sat Mar 14 18:30:47 CDT 2015
+**** info	Sat Mar 14 18:30:47 CDT 2015	1426375847668	/atg/commerce/catalog/custom/AncestorGeneratorService	Update Catalogs: total processing time is seconds: 12
+**** info	Sat Mar 14 18:30:47 CDT 2015	1426375847668	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:performService finished in 12 seconds.
+**** info	Sat Mar 14 18:30:47 CDT 2015	1426375847668	/atg/commerce/catalog/custom/CatalogMaintenanceService	Service Lock CatalogMaintenance released for service CatalogMaintenance.
+**** info	Sat Mar 14 18:31:00 CDT 2015	1426375860466	/atg/epub/monitor/ScenarioConfigurationMonitor	This is not an editor server. Skipping any scenario configuration update events and disabling this component.
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948861	/atg/registry/ContentRepositories/ProductCatalog-shadow	SQL Repository startup complete
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948862	/atg/commerce/catalog/custom/CatalogMaintenanceService	Service CatalogMaintenance - processing functions: AGS_GENPROPERTIES 
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948863	/atg/commerce/catalog/custom/CatalogMaintenanceService	Service Lock CatalogMaintenance obtained for service CatalogMaintenance.
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948863	/atg/commerce/catalog/custom/AncestorGeneratorService	Service AncestorGenerator - processing functions: AGS_GENPROPERTIES 
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948863	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:performService starting.
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948863	/atg/commerce/catalog/custom/AncestorGeneratorService	Update Catalogs: started at Sat Mar 14 18:32:28 CDT 2015
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948945	/atg/commerce/catalog/custom/AncestorGeneratorService	Executing count queries for base catalogs, categories and folders.
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948951	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to process base catalogs.
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948951	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree ended processing of base catalogs.
+**** info	Sat Mar 14 18:32:28 CDT 2015	1426375948956	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to process base categories.
+**** info	Sat Mar 14 18:32:29 CDT 2015	1426375949493	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree ended processing base categories.
+**** info	Sat Mar 14 18:32:29 CDT 2015	1426375949497	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to process base catalog folders.
+**** info	Sat Mar 14 18:32:29 CDT 2015	1426375949498	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree ended processing of base catalog folders.
+**** info	Sat Mar 14 18:32:29 CDT 2015	1426375949498	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to update repository for catalogs and categories.
+**** info	Sat Mar 14 18:32:29 CDT 2015	1426375949700	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree update to repository ended for catalogs and categories.
+**** info	Sat Mar 14 18:32:29 CDT 2015	1426375949701	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree starting to update products and sku relationships.
+**** info	Sat Mar 14 18:32:29 CDT 2015	1426375949701	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product sites.
+**** info	Sat Mar 14 18:32:31 CDT 2015	1426375951392	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product sites.
+**** info	Sat Mar 14 18:32:31 CDT 2015	1426375951392	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product ancestor categories.
+**** info	Sat Mar 14 18:32:32 CDT 2015	1426375952905	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product ancestor categories.
+**** info	Sat Mar 14 18:32:32 CDT 2015	1426375952905	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product catalog.
+**** info	Sat Mar 14 18:32:34 CDT 2015	1426375954399	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product catalog.
+**** info	Sat Mar 14 18:32:34 CDT 2015	1426375954400	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update product parent categories for catalogs.
+**** info	Sat Mar 14 18:32:34 CDT 2015	1426375954457	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update product parent categories for catalogs.
+**** info	Sat Mar 14 18:32:34 CDT 2015	1426375954458	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update sku sites.
+**** info	Sat Mar 14 18:32:36 CDT 2015	1426375956371	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update sku sites.
+**** info	Sat Mar 14 18:32:36 CDT 2015	1426375956372	/atg/commerce/catalog/custom/AncestorGeneratorService	Started update sku catalogs.
+**** info	Sat Mar 14 18:32:38 CDT 2015	1426375958196	/atg/commerce/catalog/custom/AncestorGeneratorService	Completed update sku catalogs.
+**** info	Sat Mar 14 18:32:38 CDT 2015	1426375958197	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:processTree update ended for products and skus.
+**** info	Sat Mar 14 18:32:38 CDT 2015	1426375958197	/atg/commerce/catalog/custom/AncestorGeneratorService	Starting to invalidate cache for updated assets.
+**** info	Sat Mar 14 18:32:38 CDT 2015	1426375958216	/atg/commerce/catalog/custom/AncestorGeneratorService	Cache invalidation finished. Invalidated 1246 assets.
+**** info	Sat Mar 14 18:32:39 CDT 2015	1426375959307	/atg/commerce/catalog/custom/AncestorGeneratorService	Update Catalogs: ended at Sat Mar 14 18:32:39 CDT 2015
+**** info	Sat Mar 14 18:32:39 CDT 2015	1426375959308	/atg/commerce/catalog/custom/AncestorGeneratorService	Update Catalogs: total processing time is seconds: 10
+**** info	Sat Mar 14 18:32:39 CDT 2015	1426375959308	/atg/commerce/catalog/custom/AncestorGeneratorService	TreeWalkUpdateService:performService finished in 10 seconds.
+**** info	Sat Mar 14 18:32:39 CDT 2015	1426375959308	/atg/commerce/catalog/custom/CatalogMaintenanceService	Service Lock CatalogMaintenance released for service CatalogMaintenance.
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114967	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114968	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114968	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114968	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114968	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114969	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114969	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(detailed)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:14 CDT 2015	1426376114969	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(currentCatalog)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:15 CDT 2015	1426376115334	/atg/commerce/pricing/PricingActor	[INFO][/atg/commerce/pricing/PricingActor(productPriceRanges)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:15 CDT 2015	1426376115335	/atg/commerce/pricing/PricingActor	[INFO][/atg/commerce/pricing/PricingActor(skuPrices)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:15 CDT 2015	1426376115394	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getCurrentCatalogRootCategories)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:15 CDT 2015	1426376115395	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getCategory)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:15 CDT 2015	1426376115395	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getSku)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116002	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116002	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116003	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116003	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116003	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116003	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116004	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116004	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116004	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116004	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmReturn-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116004	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmReturn-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116004	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmation)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116005	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116005	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116005	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116005	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(modifiableRefundsMethodList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116005	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isCurrentOrderReturnable)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116006	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isReturnActive)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116006	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(returns)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116006	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(nonReturnItemDetails)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116006	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(orderReturnInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116007	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isReturnable)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116007	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(outputReturnDetails)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116128	/atg/commerce/ShoppingCartActor	[INFO][/atg/commerce/ShoppingCartActor(detailed)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:16 CDT 2015	1426376116748	/atg/commerce/order/purchase/CommitOrderActor	[INFO][/atg/commerce/order/purchase/CommitOrderActor(commitOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117317	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(getShippingGroups)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117317	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117317	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117317	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117317	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117318	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117318	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117318	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(getAllCommerceItemShippingInfos)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117318	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:17 CDT 2015	1426376117319	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118003	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118004	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118004	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118004	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addItemToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118005	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addItemToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118005	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118005	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118005	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118005	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118006	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118006	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118006	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118007	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118007	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118007	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118008	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118008	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118008	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118008	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118008	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118008	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118009	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118009	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118009	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeAndAddItemToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118009	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeAndAddItemToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118009	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118010	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118010	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118010	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:18 CDT 2015	1426376118010	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:19 CDT 2015	1426376119336	/atg/store/droplet/StoreTextActor	[INFO][/atg/store/droplet/StoreTextActor(message)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:19 CDT 2015	1426376119337	/atg/store/droplet/StoreTextActor	[INFO][/atg/store/droplet/StoreTextActor(contentList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:19 CDT 2015	1426376119898	/atg/userprofiling/ForgotPasswordActor	[INFO][/atg/userprofiling/ForgotPasswordActor(error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120042	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120042	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120042	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120043	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(convertWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120043	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(addToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120043	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(removeGiftItem)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120043	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(removeGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120043	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(createGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120044	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(updateGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120044	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(moveToWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120044	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(copyToWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120044	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(moveToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120044	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(copyToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120272	/atg/commerce/gifts/GiftlistSearchActor	[INFO][/atg/commerce/gifts/GiftlistSearchActor(error)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120941	/atg/targeting/TargetingServicesActor	[INFO][/atg/targeting/TargetingServicesActor(executeTargeter)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120942	/atg/targeting/TargetingServicesActor	[INFO][/atg/targeting/TargetingServicesActor(targeterSwitch)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120953	/atg/endeca/assembler/cartridge/actor/TargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/TargetedItemsActor(getTargetedItems)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120954	/atg/endeca/assembler/cartridge/actor/TargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/TargetedItemsActor(getProductInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120955	/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor(executeTargeter)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:20 CDT 2015	1426376120955	/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor(getFullComponentPath)] Actor chain is not registered
+**** info	Sat Mar 14 18:35:24 CDT 2015	1426376124082	/atg/seo/SEORepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:16 CDT 2015	1426376836375	/atg/dynamo/service/logging/ScreenLog	Using external info logging for Nucleus debug and trace messages to prevent hidden Nucleus logging. Set the Nucleus /atg/dynamo/service/logging/ScreenLog.useInfoForDebug property to false to use external logging debug and trace instead.
+**** info	Sat Mar 14 18:47:22 CDT 2015	1426376842015	/atg/dynamo/server/OPSSInitializer	The Java Platform Services (JPS) have been started in JSE mode.
+**** info	Sat Mar 14 18:47:24 CDT 2015	1426376844622	/atg/dynamo/service/jdbc/SDSRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:24 CDT 2015	1426376844749	/atg/dynamo/service/jdbc/SQLRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:25 CDT 2015	1426376845111	/atg/commerce/pricing/priceLists/PriceLists	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:25 CDT 2015	1426376845515	/atg/commerce/pricing/Promotions	Resolving reference to /atg/commerce/catalog/ProductCatalog
+**** info	Sat Mar 14 18:47:25 CDT 2015	1426376845673	/atg/commerce/gifts/Giftlists	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:25 CDT 2015	1426376845747	/atg/content/ContentManagementRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:25 CDT 2015	1426376845754	/atg/commerce/locations/LocationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:25 CDT 2015	1426376845794	/atg/commerce/contracts/Contracts	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:26 CDT 2015	1426376846040	/atg/commerce/claimable/ClaimableRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:26 CDT 2015	1426376846050	/atg/userprofiling/ProfileAdapterRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:26 CDT 2015	1426376846419	/atg/commerce/catalog/ProductCatalog	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:26 CDT 2015	1426376846505	/atg/multisite/SiteRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:28 CDT 2015	1426376848299	/atg/commerce/pricing/ShippingPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:47:28 CDT 2015	1426376848681	/atg/commerce/pricing/TaxPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:47:29 CDT 2015	1426376849054	/atg/commerce/order/OrderRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:29 CDT 2015	1426376849486	/atg/commerce/inventory/InventoryRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:29 CDT 2015	1426376849538	/atg/commerce/fulfillment/FulfillmentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:47:30 CDT 2015	1426376850592	/atg/commerce/pricing/OrderPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:47:30 CDT 2015	1426376850613	/atg/commerce/PipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:47:31 CDT 2015	1426376851215	/atg/commerce/approval/ApprovalPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:47:31 CDT 2015	1426376851492	/atg/commerce/payment/PaymentPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:47:31 CDT 2015	1426376851591	/atg/commerce/invoice/pipeline/InvoicePipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:47:31 CDT 2015	1426376851637	/atg/commerce/invoice/InvoiceRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:32 CDT 2015	1426376852214	/atg/commerce/pricing/ItemPricingEngine	Pricing Engine starting up
+**** info	Sat Mar 14 18:47:33 CDT 2015	1426376853157	/atg/systemconfiguration/SystemConfigurationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:33 CDT 2015	1426376853512	/atg/dynamo/security/AdminSqlRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:33 CDT 2015	1426376853522	/atg/dynamo/security/AdminAccountInitializer	Initializing account database /atg/dynamo/security/AdminAccountManager from /atg/dynamo/security/SimpleXmlUserAuthority
+**** info	Sat Mar 14 18:47:33 CDT 2015	1426376853832	/atg/dynamo/security/opss/csf/CredentialStoreManager	Credential Store services are enabled and running
+**** info	Sat Mar 14 18:47:34 CDT 2015	1426376854010	/atg/scenario/XrefParserManager	XrefParserManager startup complete
+**** info	Sat Mar 14 18:47:35 CDT 2015	1426376855836	/atg/scenario/ScenarioManager	Initializing Process Editor Server Avul-PC:8851
+**** info	Sat Mar 14 18:47:37 CDT 2015	1426376857958	/atg/scenario/CollectiveEmailSender	Resolving reference to /atg/userprofiling/email/TemplateEmailSender
+**** info	Sat Mar 14 18:47:38 CDT 2015	1426376858045	/atg/reporting/DatasetRecorderManager	Validating all dataset mappers
+**** info	Sat Mar 14 18:47:38 CDT 2015	1426376858422	/atg/commerce/order/abandoned/AbandonedOrderLogRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859193	/atg/reporting/datacollection/search/QueryLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859200	/atg/reporting/datacollection/search/QueryLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859228	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859229	/atg/reporting/datacollection/search/ViewContentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859241	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	RepositoryGroupListManager is null
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859253	/atg/reporting/datacollection/search/UseSearchEnvironmentLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859321	/atg/userprofiling/PersonalizationRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859337	/atg/reporting/datacollection/userprofiling/RegistrationLogEntryGenerator	No repository group lists specified, no group data will be logged.
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859352	/atg/adc/ADCPipelineManager	Starting PipelineManager.
+**** info	Sat Mar 14 18:47:39 CDT 2015	1426376859471	/atg/clicktoconnect/C2CRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:43 CDT 2015	1426376863753	/atg/content/media/MediaRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:43 CDT 2015	1426376863878	/atg/dynamo/server/SQLRepositoryEventServer	Service /atg/dynamo/server/SQLRepositoryEventServer listening at http://Avul-PC:61087/
+**** info	Sat Mar 14 18:47:43 CDT 2015	1426376863915	/atg/commerce/custsvc/CsrRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:43 CDT 2015	1426376863970	/atg/store/stores/StoreContentRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:44 CDT 2015	1426376864351	/atg/sitemap/SitemapRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:44 CDT 2015	1426376864476	/atg/dynamo/server/RmiServer	Service /atg/dynamo/server/RmiServer listening at rmi://Avul-PC:8861/
+**** info	Sat Mar 14 18:47:46 CDT 2015	1426376866148	/atg/dynamo/servlet/dafpipeline/HeadRestServlet	REST servlet pipeline initialized.
+**** info	Sat Mar 14 18:47:46 CDT 2015	1426376866530	/atg/dynamo/service/ServerLockManager	Service /atg/dynamo/service/ServerLockManager listening at http://Avul-PC:9012/
+**** info	Sat Mar 14 18:47:46 CDT 2015	1426376866883	/atg/registry/PipelineRegistry	Starting Pipeline Registry.
+**** info	Sat Mar 14 18:47:47 CDT 2015	1426376867155	/atg/dynamo/service/jdbc/DirectJTDataSource_production	Resolving reference to /atg/dynamo/service/jdbc/DirectJTDataSource
+**** info	Sat Mar 14 18:47:47 CDT 2015	1426376867199	/atg/textsearch/repository/SearchRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:47 CDT 2015	1426376867245	/atg/userprofiling/textsearch/ProfileOutputConfig	Starting IOC listener for ProfileOutputConfig
+**** info	Sat Mar 14 18:47:47 CDT 2015	1426376867399	/atg/dynamo/server/SQLRepositoryEventServer_production	Service /atg/dynamo/server/SQLRepositoryEventServer_production listening at http://Avul-PC:61110/
+**** info	Sat Mar 14 18:47:47 CDT 2015	1426376867431	/atg/search/repository/IncrementalItemQueueRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:49 CDT 2015	1426376869223	/atg/commerce/endeca/index/CategoryTreeService	service started.
+**** info	Sat Mar 14 18:47:49 CDT 2015	1426376869307	/atg/commerce/textsearch/OrderOutputConfig	Starting IOC listener for OrderOutputConfig
+**** info	Sat Mar 14 18:47:49 CDT 2015	1426376869613	/atg/tracking/UsageTrackingRepository	SQL Repository startup complete
+**** info	Sat Mar 14 18:47:49 CDT 2015	1426376869950	/atg/commerce/catalog/CatalogChangesListener	Resolving reference to /atg/commerce/catalog/custom/CatalogChangesListener
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981718	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981718	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981718	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(create-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981718	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981718	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981719	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(update-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981719	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(detailed)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981719	/atg/userprofiling/ProfileActor	[INFO][/atg/userprofiling/ProfileActor(currentCatalog)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981907	/atg/commerce/pricing/PricingActor	[INFO][/atg/commerce/pricing/PricingActor(productPriceRanges)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981907	/atg/commerce/pricing/PricingActor	[INFO][/atg/commerce/pricing/PricingActor(skuPrices)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981955	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getCurrentCatalogRootCategories)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981956	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getCategory)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:41 CDT 2015	1426376981956	/atg/commerce/catalog/ProductCatalogActor	[INFO][/atg/commerce/catalog/ProductCatalogActor(getSku)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982436	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982436	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982436	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(createReturn-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982437	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982437	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982437	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(selectItems-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982437	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982438	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982438	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(cancelReturnRequest-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982438	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmReturn-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982439	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmReturn-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982439	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(confirmation)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982439	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982439	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982440	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(applyRefunds-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982440	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(modifiableRefundsMethodList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982440	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isCurrentOrderReturnable)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982440	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isReturnActive)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982441	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(returns)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982441	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(nonReturnItemDetails)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982441	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(orderReturnInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982441	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(isReturnable)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982441	/atg/commerce/custsvc/returns/ReturnsActor	[INFO][/atg/commerce/custsvc/returns/ReturnsActor(outputReturnDetails)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:42 CDT 2015	1426376982532	/atg/commerce/ShoppingCartActor	[INFO][/atg/commerce/ShoppingCartActor(detailed)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983024	/atg/commerce/order/purchase/CommitOrderActor	[INFO][/atg/commerce/order/purchase/CommitOrderActor(commitOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983377	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(getShippingGroups)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983377	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983377	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983377	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(specifyDefaultShippingGroup-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983378	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983378	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983378	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyDefaultShippingGroup-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983378	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(getAllCommerceItemShippingInfos)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983378	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983379	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983379	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(applyShippingGroups-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983379	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983379	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:43 CDT 2015	1426376983380	/atg/commerce/order/purchase/ShippingGroupActor	[INFO][/atg/commerce/order/purchase/ShippingGroupActor(splitShippingInfos-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985106	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985108	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985108	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addMultipleItemsToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985108	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addItemToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985109	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(addItemToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985109	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985110	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985111	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfo-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985111	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985111	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985112	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByCommerceId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985112	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985112	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985113	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(moveToPurchaseInfoByRelId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985113	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985113	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985114	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985114	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985114	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985114	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByCommerceId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985115	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985115	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985115	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(setOrderByRelationshipId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985115	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeAndAddItemToOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985116	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeAndAddItemToOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985116	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrder-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985116	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrder-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985116	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985117	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985117	/atg/commerce/order/purchase/CartModifierActor	[INFO][/atg/commerce/order/purchase/CartModifierActor(removeItemFromOrderByRelationshipId-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985410	/atg/store/droplet/StoreTextActor	[INFO][/atg/store/droplet/StoreTextActor(message)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985411	/atg/store/droplet/StoreTextActor	[INFO][/atg/store/droplet/StoreTextActor(contentList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985873	/atg/userprofiling/ForgotPasswordActor	[INFO][/atg/userprofiling/ForgotPasswordActor(error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985995	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985996	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist-error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985996	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(deleteGiftlist-success)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985996	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(convertWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985996	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(addToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985996	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(removeGiftItem)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985996	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(removeGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985997	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(createGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985997	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(updateGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985997	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(moveToWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985997	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(copyToWishList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985997	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(moveToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:45 CDT 2015	1426376985998	/atg/commerce/gifts/GiftlistActor	[INFO][/atg/commerce/gifts/GiftlistActor(copyToGiftList)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:46 CDT 2015	1426376986188	/atg/commerce/gifts/GiftlistSearchActor	[INFO][/atg/commerce/gifts/GiftlistSearchActor(error)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:46 CDT 2015	1426376986749	/atg/targeting/TargetingServicesActor	[INFO][/atg/targeting/TargetingServicesActor(executeTargeter)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:46 CDT 2015	1426376986750	/atg/targeting/TargetingServicesActor	[INFO][/atg/targeting/TargetingServicesActor(targeterSwitch)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:46 CDT 2015	1426376986760	/atg/endeca/assembler/cartridge/actor/TargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/TargetedItemsActor(getTargetedItems)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:46 CDT 2015	1426376986760	/atg/endeca/assembler/cartridge/actor/TargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/TargetedItemsActor(getProductInfo)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:46 CDT 2015	1426376986761	/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor(executeTargeter)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:46 CDT 2015	1426376986761	/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor	[INFO][/atg/endeca/assembler/cartridge/actor/HomepageTargetedItemsActor(getFullComponentPath)] Actor chain is not registered
+**** info	Sat Mar 14 18:49:49 CDT 2015	1426376989945	/atg/seo/SEORepository	SQL Repository startup complete
+**** info	Sat Mar 14 20:18:13 CDT 2015	1426382293979	/atg/devtools/ArchiveDirectoryCache	Finished Updating J2EE Application Cache
